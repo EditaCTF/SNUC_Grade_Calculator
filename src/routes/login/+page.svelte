@@ -1,59 +1,43 @@
-<script>
-    import { onMount } from 'svelte';
+<script lang="ts">
     import PocketBase from 'pocketbase';
-
-    let submitDisabled = false;
 
     const pb = new PocketBase('https://edita.pockethost.io');
 
-    let username = "";
-    let email = "";
-    let password = "";
-    let passwordConfirm = "";
-    let year = "";
-    let branch = "";
-
     let loginUsername = "";
     let loginPassword = "";
-
     let isDisabled = false;
-    /**
-	 * @param {{ preventDefault: any; }} e
-	 */
-    async function loginUser(e) {
-        e.preventDefault;
-        isDisabled = true;
-    }
-</script>
 
-<h1>SNUC Grade Calculator</h1>
-<!--       const handleSubmit = async(e) => {
-        document.getElementById('submit').disabled=true;
-        console.log(userData);
+    async function loginUser(e : any) {
+      isDisabled = true;
+        const data = {
+            username: loginUsername,
+            password: loginPassword
+        };
         try {
-          e.preventDefault()
-          e.disable = true
-            userData.username,
-            userData.password
-        );
+          const authData = await pb.collection('user_details').authWithPassword(
+            data.username,
+            data.password
+          );
         }
         catch {
+          e.disabled = false;
           alert("Incorrect credentials!")
           pb.authStore.clear()
-          document.getElementById('submit').disabled=false
           return
         }
         finally {
           console.log(pb.authStore.isValid);
           if (pb.authStore.isValid == true) {
-            window.location.href = '/profile';
+            console.log("Login Successful")     
+            window.location.href = "/dashboard"     
           }
         }
-
     }
- -->
+</script>
+
 <h2>Login</h2>
-<div>
+
+<form>
     <div>
         <label for="loginUsername">Username:</label>
         <input type="text" id="loginUsername" bind:value={loginUsername}>
@@ -63,10 +47,7 @@
         <label for="loginPassword">Password:</label>
         <input type="password" id="loginPassword" bind:value={loginPassword}>
     </div>
-    
     <div>
-        <button on:click={loginUser} disabled={isDisabled}>
-            Login
-        </button>
-    </div>
-</div>
+        <input type="submit" on:click={loginUser} disabled={isDisabled}>
+      </div>
+</form>
