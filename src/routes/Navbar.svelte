@@ -11,8 +11,8 @@
     }
 </script>
 
-<a href="/input">Input</a>
 <a href = "/">Home</a>
+<a href="/input">Input</a>
 <a href = "/dashboard">Dashboard</a>
 <a href="/calculate_score">Calculator</a>
 
