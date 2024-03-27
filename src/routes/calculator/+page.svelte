@@ -27,7 +27,8 @@
         console.log('Total Credits:', totalCredits);
         console.log('Weighted Sum:', weightedSum);
         console.log('Final GPA:', finalGPA);
-
+        (document.getElementById('result') as HTMLElement).innerText = finalGPA.toFixed(2);
+        localStorage.setItem('result', finalGPA.toFixed(2));
         saveDataToLocalStorage();
     }
 
@@ -117,8 +118,8 @@
     </div>
   </div>
 </div>
-<!-- <div id='res' class='flex justify-center items-start h-screen px-10'>
+<div id='res' class='flex  items-start h-screen px-10 flex-col'>
   <h1 class='py-50 text-6xl'>Your predicted SGPA is</h1>
-  <p id='result' class='py-50 text-4xl'></p>
-</div> -->
+  <p id='result' class='py-32 flex justify-center mx-auto text-blue-500 text-8xl'></p>
+</div>
 </div>
