@@ -9,15 +9,11 @@
 		window.location.href = '/';
 	}
 </script>
-
+<!-- window.location.href = '/dashboard' -->
 <nav class="flex justify-between items-center py-4 px-6">
 	<div class="flex items-center">
 		<img src="/favicon.png" alt="Logo" class="h-8 mr-2" />
-	</div>
-	<a href="/">Home</a>
-	<a href="/input">Input</a>
-	<a href="/dashboard">Dashboard</a>
-	<a href="/calculate_score">Calculator</a>
+	</div> 
 
 	<div class="flex space-x-4">
 		<a href="/" class="hover:text-gray-400">Home</a>
