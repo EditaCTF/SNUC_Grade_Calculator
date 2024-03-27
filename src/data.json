@@ -1,89 +1,198 @@
 {
-  "1":{
-    "cyber":{
-      "MA1001": 4,
-      "EN1001": 3,
-      "CS1001": 3,
-      "CS1008": 3,
-      "CS1801": 4,
-      "PH1001T": 3,
-      "PH1801T": 2
+    "1": {
+      "cyber": {
+        "MA1001": 4,
+        "EN1001": 3,
+        "CS1001": 3,
+        "CS1009": 3,
+        "CS1801": 4,
+        "CS1704": 3,
+        "PH1001T": 3,
+        "PH1801T": 2
+      },
+      "aids": {
+        "EN1001": 3,
+        "MA1001": 4,
+        "PH1001T": 3,
+        "BS1001": 2,
+        "CS1001": 3,
+        "CS1703": 3,
+        "CS1801": 2,
+        "PH1801T": 2
+      },
+      "iot": {
+        "EN1001": 3,
+        "MA1001": 3,
+        "CS1001": 3,
+        "BS1001": 2,
+        "CS1005": 3,
+        "CS1007": 3,
+        "CS1801": 2,
+        "CS1803": 2
+      }
     },
-    "aids": {
-      "EN1001": 3,
-      "MA1001": 4,
-      "PH1001T": 3,
-      "BS1001": 2,
-      "CS1001": 3,
-      "CS1703": 3,
-      "CS1801": 2,
-      "PH1801T": 2
+    "2": {
+      "aids": {
+        "EN1002": 3,
+        "MA1004": 3,
+        "CS1002": 2,
+        "CS1006T": 3,
+        "CS1004": 3,
+        "CS1704": 4,
+        "CS1804T": 2,
+        "CS1802": 2
+      },
+      "cyber": {
+        "EN1002": 3,
+        "MA1002": 3,
+        "CS1002": 2,
+        "CS1006T": 3,
+        "CS1004": 3,
+        "CS1008": 3,
+        "CS1804T": 2,
+        "CS1802": 2
+      },
+      "iot": {
+        "EN1002": 3,
+        "MA1002": 3,
+        "PH1001T": 3,
+        "CS1004": 3,
+        "CS1702": 4,
+        "CS1002": 2,
+        "PH1801T": 2,
+        "CS1802": 2
+      }
     },
-    "iot": {
-      "EN1001": 3,
-      "MA1001": 3,
-      "CS1001": 3,
-      "BS1001": 2,
-      "CS1005": 3,
-      "CS1007": 3,
-      "CS1801": 2,
-      "CS1803": 2
+    "3": {
+      "cyber": {
+        "Discrete Mathematics": 3,
+        "Object Oriented Programming": 3,
+        "Operating Systems + Lab": 4,
+        "Database Management System": 3,
+        "Modern Cryptography": 3,
+        "Cognitive Psychology": 2,
+        "OOP Lab": 2,
+        "Database Management Lab": 2
+      },
+      "aids": {
+        "MA2003": 4,
+        "CS2003": 3,
+        "CS2701": 4,
+        "CS2007": 3,
+        "CS2009": 2,
+        "HS2001": 2,
+        "CS2803": 2,
+        "CS2805": 2
+      },
+      "iot": {
+        "MA2001": 4,
+        "CS1006T": 3,
+        "CS2003": 3,
+        "CS2001T": 3,
+        "CS2005": 3,
+        "CS1804T": 2,
+        "CS2801T": 2
+      }
+    },
+    "4": {
+      "aids": {
+        "CS2004": 3,
+        "CS2001T": 3,
+        "CS2702": 4,
+        "CS2012": 3,
+        "CS2010T": 1,
+        "OE1": 3,
+        "CS2801T": 2,
+        "CS2806": 2
+      },
+      "cyber": {
+        "Design and Analysis of Algorithms": 3,
+        "Graph Theory": 4,
+        "Computer Networks": 3,
+        "Machine Learning Techniques": 3,
+        "OE1": 3,
+        "System Security Management +Lab": 4,
+        "Computer Networks Lab": 2,
+        "Machine Learning Lab": 2
+      },
+      "iot": {
+        "CS2008": 3,
+        "CS2004": 3,
+        "CS2002": 3,
+        "CS2006": 3,
+        "CS2000": 1,
+        "OE1": 3,
+        "CS2804": 2,
+        "CS2802": 2,
+        "CS2800": 1
+      }},
+      "5": {
+        "aids": {
+          "MA3001": 3,
+          "CS3005": 3,
+          "MA3003": 3,
+          "CS3007": 3,
+          "BM3003": 2,
+          "CS3001": 3,
+          "CS3009": 1,
+          "CS3809": 2,
+          "CS3801": 1
+        },
+        "iot": {
+          "CS2007": 3,
+          "CS3005": 3,
+          "CS3003": 3,
+          "CS3001": 2,
+          "BM3000T": 0,
+          "PE1": 3,
+          "OE2": 3,
+          "CS3807": 2,
+          "CS3805": 2,
+          "CS3803": 1
+        },
+        "cyber": {
+          "Optimization Techniques": 3,
+          "High Performance Computing": 3,
+          "Artificial Intelligence": 3,
+          "Network Pen Testing": 3,
+          "Principles of Management": 2,
+          "Professional Elective I": 3,
+          "Pentesting": 2,
+          "CyberSec Lab": 1
+        }
+      },
+      "6": {
+        "cyber": {
+          "Image and video Processing": 3,
+          "Network Security": 2,
+          "Cloud Computing and Security": 3,
+          "Cyber Forensics": 3,
+          "Professional Elective II": 3,
+          "Open Elective II": 3,
+          "Cloud Security Lab": 2,
+          "Image and video Processing Lab": 2
+        },
+        "aids": {
+          "CS3008": 3,
+          "BM3000T": 0,
+          "CS3012": 3,
+          "CS3010": 1,
+          "PE1": 3,
+          "PE2": 3,
+          "OE2": 3,
+          "CS3804": 2,
+          "CS3806": 2
+        },
+        "iot": {
+          "CS3006": 3,
+          "CS3004": 3,
+          "CS3002": 2,
+          "PE1": 3,
+          "PE2": 3,
+          "OE2": 3,
+          "CS3852": 1,
+          "CS3900": 1,
+          "CS3802": 2
+        }
+      }
     }
-  },
-  "2":{
-    "cyber": {
-      "MA2003": 3,
-      "CS2003": 3,
-      "CS2701": 4,
-      "CS2010T": 3,
-      "CS2007": 3,
-      "HS2001": 2,
-      "CS2803": 2,
-      "CS2801T": 2
-    },
-    "aids": {
-      "MA2003": 4,
-      "CS2003": 3,
-      "CS2701": 4,
-      "CS2007": 3,
-      "CS2009": 2,
-      "HS2001": 2,
-      "CS2803": 2,
-      "CS2805": 2
-    },
-    "iot": {
-      "MA2001": 4,
-      "CS1006T": 3,
-      "CS2003": 3,
-      "CS2001T": 3,
-      "CS2005": 3,
-      "CS1804T": 2,
-      "CS2801T": 2
-    }
-  },
-  "3":{
-    "aids": {
-      "MA3001": 3,
-      "CS3005": 3,
-      "MA3003": 3,
-      "CS3007": 3,
-      "BM3003": 2,
-      "CS3001": 3,
-      "CS3009": 1,
-      "CS3809": 2,
-      "CS3801": 1
-    },
-    "iot": {
-      "CS2007": 3,
-      "CS3001": 3,
-      "CS3003": 3,
-      "CS3001": 2,
-      "BM3000T": 0,
-      "PE1": 3,
-      "OE2": 3,
-      "CS3807": 2,
-      "CS3805": 2,
-      "CS3803": 1
-    }
-  }
-}
