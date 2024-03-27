@@ -58,70 +58,67 @@
         retrieveDataFromLocalStorage();
     });
 </script>
-
-<h1 class="flex justify-center text-blue-500 text-5xl">Calculator</h1>
-
-<p class="flex justify-center text-blue-400 text-3xl">Calculate your grade here!</p>
-
 <br>
 <br>
-<div class="flex pl-40">
-    <!-- <label for="sem" class="text-blue-700 text-3xl">Semester</label> -->
-    <select id="sem" class="text-blue-400 text-2xl bg-inherit" bind:value={sem} on:change={clearItems}>
-        <option value="" class="" selected disabled>Sem</option>
-        <!-- Default value -->
-        <option value="1">1st Semester</option>
-        <option value="2">2nd Semester</option>
-        <option value="3">3rd Semester</option>
-        <option value="4">4th Semester</option>
-        <option value="5">5th Semester</option>
-        <option value="6">6th Semester</option>
-        <!-- <option value="7" disabled>7</option>
-        <option value="8" disabled>8</option> -->
-    </select>
+<div class='flex justify-left'>
+<div class='flex justify-left items-start h-screen px-10'>
+  <div class='text-left'>
+      <h1 class='py-50 text-6xl'>SGPA Calculator</h1>
+      <select id="sem" class="text-blue-400 text-2xl bg-inherit py-3" bind:value={sem} on:change={clearItems}>
+          <option value="" class="" selected disabled>Semester</option>
+          <option value="1">Semester 1</option>
+          <option value="2">Semester 2</option>
+          <option value="3">Semester 3</option>
+          <option value="4">Semester 4</option>
+          <option value="5">Semester 5</option>
+          <option value="6">Semester 6</option>
+      </select>
+      
+      <select id="branch" class="text-blue-400 text-2xl bg-inherit" bind:value={branch} on:change={clearItems}>
+          <option value="" selected disabled>Branch</option>
+          <option value="aids">AI/DS</option>
+          <option value="iot">IoT</option>
+          <option value="cyber">Cyber</option>
+      </select>
+      
+      <div class='py-5'>
+        {#if branch && sem}
+        <table class="px-10 py-10 rounded-lg bg-[#CFDDEB]">
+          <thead>
+              <tr>
+                  <th class="border-b border-black p-4">Course Code</th>
+                  <th class="border-b border-black p-4">Credit</th>
+                  <th class="border-b border-black p-4">Grade</th>
+              </tr>
+          </thead>
+          <tbody>
+              {#each Object.entries(data[sem][branch]) as [courseCode, credit], idx}
+              <tr>
+                  <td class="p-4">{courseCode}</td>
+                  <td class="p-4">{credit}</td>
+                  <td class="p-4">
+                      <select class='bg-[#CFDDEB]' id="sem" bind:value={grade[idx]} on:change={() => { console.log(grade) }}>
+                          <option value="" selected disabled>Select Grade</option>
+                          <option value=10>O</option>
+                          <option value=9>A+</option>
+                          <option value=8>A</option>
+                          <option value=7>B+</option>
+                          <option value=6>B</option>
+                          <option value=5>P</option>
+                          <option value=0>RE/AB</option>
+                      </select>
+                  </td>
+              </tr>
+              {/each}
+          </tbody>
+        </table><br>
+        <button class='flex bg-[#BCD6FF] w-fit rounded-2xl px-3 py-3' on:click={calculateHandler}>Calculate</button>
+      {/if}
+    </div>
+  </div>
 </div>
-
-<div class="flex pl-40">
-    <!-- <label for="branch" class="">Branch:</label> -->
-    <select id="branch" class="text-blue-400 text-2xl bg-inherit" bind:value={branch} on:change={clearItems}>
-        <option value="" selected disabled>Branch</option>
-        <!-- Default value -->
-        <option value="aids">AIDS</option>
-        <option value="iot">IoT</option>
-        <option value="cyber">Cyber</option>
-    </select>
+<!-- <div id='res' class='flex justify-center items-start h-screen px-10'>
+  <h1 class='py-50 text-6xl'>Your predicted SGPA is</h1>
+  <p id='result' class='py-50 text-4xl'></p>
+</div> -->
 </div>
-    
-{#if branch && sem}
-<table class="rounded-xl border border-black">
-    <thead>
-      <tr>
-        <th class="border border-black p-2">Course Code</th>
-        <th class="border border-black p-2">Credit</th>
-        <th class="border border-black p-2">Grade</th>
-      </tr>
-    </thead>
-    <tbody>
-      {#each Object.entries(data[sem][branch]) as [courseCode, credit], idx}
-        <tr>
-          <td class="border border-black">{courseCode}</td>
-          <td class="border border-black text-center">{credit}</td>
-          <td class="border border-black">
-            <select id="sem" bind:value={grade[idx]} on:change={() => { console.log(grade)} }>
-              <option value="" selected disabled>Select Grade</option>
-              <option value=10>O</option>
-              <option value=9>A+</option>
-              <option value=8>A</option>
-              <option value=7>B+</option>
-              <option value=6>B</option>
-              <option value=5>P</option>
-              <option value=0>RE/AB</option>
-            </select>
-          </td>
-        </tr>
-      {/each}
-    </tbody>
-  </table>
-
-  <button on:click={calculateHandler}>Calculate</button>
-{/if}

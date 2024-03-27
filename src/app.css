@@ -19,3 +19,10 @@ body:before {
   background-image: linear-gradient(to bottom left, #ffffff, #C2DEFF);
   z-index: -1;
 }
+
+* {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}

@@ -18,16 +18,17 @@
 	</div> 
 
 	<div class="flex space-x-4">
-		<button on:click={() => {window.location.href="/"}} class="hover:text-gray-400">Home</button>
-		<button on:click={() => {window.location.href="/dashboard"}} class="hover:text-gray-400">Dashboard</button>
+		<button on:click={() => {window.location.href="/home"}} class="hover:text-gray-400">Home</button>
+		<!-- <button on:click={() => {window.location.href="/dashboard"}} class="hover:text-gray-400">Dashboard</button> -->
 		<button on:click={() => {window.location.href="/calculator"}} class="hover:text-gray-400">Calculator</button>
+		<button on:click={() => {window.location.href="/updates"}} class="hover:text-gray-400">Updates</button>
 		<button on:click={() => {window.location.href="/about"}} class="hover:text-gray-400">About</button>
 
-		{#if userAuthenticated}
+		<!-- {#if userAuthenticated}
 			<button on:click={logoutHandler} class="hover:text-gray-400">Logout</button>
 		{:else}
 			<a href="/register" class="hover:text-gray-400">Sign Up</a>
 			<a href="/login" class="hover:text-gray-400">Sign In</a>
-		{/if}
+		{/if} -->
 	</div>
 </nav>
