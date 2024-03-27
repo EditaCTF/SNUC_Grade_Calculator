@@ -22,12 +22,12 @@
             }
         }
 
-        const finalGPA = totalCredits !== 0 ? weightedSum / totalCredits : 0;
+        finalGPA = totalCredits !== 0 ? weightedSum / totalCredits : 0;
 
         console.log('Total Credits:', totalCredits);
         console.log('Weighted Sum:', weightedSum);
         console.log('Final GPA:', finalGPA);
-        (document.getElementById('result') as HTMLElement).innerText = finalGPA.toFixed(2);
+        // (document.getElementById('result') as HTMLElement).innerText = finalGPA.toFixed(2);
         localStorage.setItem('result', finalGPA.toFixed(2));
         saveDataToLocalStorage();
     }
@@ -49,10 +49,14 @@
         const storedGrades = localStorage.getItem('grades');
         const storedSem = localStorage.getItem('sem');
         const storedBranch = localStorage.getItem('branch');
+        const storedFinalGPA = localStorage.getItem('finalGPA');
         if (storedGrades && storedSem && storedBranch) {
             grade = JSON.parse(storedGrades);
             sem = storedSem;
             branch = storedBranch;
+        }
+        if (storedFinalGPA) {
+            finalGPA = parseFloat(storedFinalGPA);
         }
     }
 
@@ -121,6 +125,7 @@
 </div>
 <div id='res' class='flex items-start h-screen px-10 flex-col'>
   <h1 class='py-50 text-6xl'>Your predicted SGPA is</h1>
-  <p id='result' class='py-32 flex justify-center mx-auto text-blue-500 text-8xl'></p>
+  <p id='result' class='py-32 flex justify-center mx-auto text-blue-500 text-8xl'>{finalGPA.toFixed(2)}</p>
 </div>
 </div>
+
