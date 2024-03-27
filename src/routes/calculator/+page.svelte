@@ -51,7 +51,7 @@
         const storedBranch = localStorage.getItem('branch');
         if (storedGrades && storedSem && storedBranch) {
             grade = JSON.parse(storedGrades);
-            sem = parseInt(storedSem);
+            sem = storedSem;
             branch = storedBranch;
         }
     }
