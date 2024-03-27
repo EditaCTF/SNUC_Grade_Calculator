@@ -5,7 +5,7 @@
     let branch: string;
     let sem: number;
     let grade: string[] = Array(10).fill("");
-
+    let finalGPA: number = 0;
     function calculateHandler() {
         console.log('Calculating....');
 
@@ -42,6 +42,7 @@
         localStorage.setItem('grades', JSON.stringify(grade));
         localStorage.setItem('sem', sem.toString());
         localStorage.setItem('branch', branch);
+        localStorage.setItem('finalGPA', finalGPA.toFixed(2)); // Store final GPA
     }
 
     function retrieveDataFromLocalStorage() {
@@ -50,7 +51,7 @@
         const storedBranch = localStorage.getItem('branch');
         if (storedGrades && storedSem && storedBranch) {
             grade = JSON.parse(storedGrades);
-            sem = storedSem;
+            sem = parseInt(storedSem);
             branch = storedBranch;
         }
     }
@@ -61,7 +62,7 @@
 </script>
 <br>
 <br>
-<div class='flex justify-left'>
+<div class='flex'>
 <div class='flex justify-left items-start h-screen px-10'>
   <div class='text-left'>
       <h1 class='py-50 text-6xl'>SGPA Calculator</h1>
@@ -118,7 +119,7 @@
     </div>
   </div>
 </div>
-<div id='res' class='flex  items-start h-screen px-10 flex-col'>
+<div id='res' class='flex items-start h-screen px-10 flex-col'>
   <h1 class='py-50 text-6xl'>Your predicted SGPA is</h1>
   <p id='result' class='py-32 flex justify-center mx-auto text-blue-500 text-8xl'></p>
 </div>

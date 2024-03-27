@@ -12,13 +12,13 @@
 <!-- window.location.href = '/dashboard' -->
 <nav class="flex justify-between items-center py-4 px-6 ">
 	<div class="flex items-center">
-
-		<img src="/image.png" alt="Logo" class="h-8 mr-2" />
-
+		<a href="/">
+		<img src="/image.png" alt="Logo" class="h-16 mr-2" />
+		</a>
 	</div> 
 
 	<div class="flex space-x-4">
-		<button on:click={() => {window.location.href="/home"}} class="hover:text-gray-400">Home</button>
+		<button on:click={() => {window.location.href="/"}} class="hover:text-gray-400">Home</button>
 		<!-- <button on:click={() => {window.location.href="/dashboard"}} class="hover:text-gray-400">Dashboard</button> -->
 		<button on:click={() => {window.location.href="/calculator"}} class="hover:text-gray-400">Calculator</button>
 		<button on:click={() => {window.location.href="/updates"}} class="hover:text-gray-400">Updates</button>
