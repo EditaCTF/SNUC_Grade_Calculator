@@ -8,31 +8,27 @@
     let subject2: string = '';
 
     const calculateGrades = () => {
-		console.log(year, branch);
-		console.log(data[year][branch])
+        console.log(year, branch);
+        console.log(data[year][branch]);
         if (year === 1 && branch === 'cyber') {
-            subject1 = 'cyber1';
-            subject2 = 'cyber2';
-
+            subject1 = data[year][branch][0];
+            subject2 = data[year][branch][1];
         } else if (year === 1 && branch === 'aids') {
-            subject1 = 'aids1';
-            subject2 = 'aids2';
+            subject1 = data[year][branch][0];
+            subject2 = data[year][branch][1];
         } else if (year === 1 && branch === 'iot') {
-            subject1 = 'iot1';
-            subject2 = 'iot2';
+            subject1 = data[year][branch][0];
+            subject2 = data[year][branch][1];
         } else {
             subject1 = '';
             subject2 = '';
         }
-	};
-
-	// onMount(() => {
-	// 	calculateGrades();
-	// });
+    };
 
     // onMount(() => {
     //     calculateGrades();
     // });
+
 </script>
 
 <h1>Calculator</h1>
