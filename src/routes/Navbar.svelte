@@ -16,10 +16,10 @@
 	</div> 
 
 	<div class="flex space-x-4">
-		<a href="/" class="hover:text-gray-400">Home</a>
-		<a href="/dashboard" class="hover:text-gray-400">Dashboard</a>
-		<a href="/calculator" class="hover:text-gray-400">Calculator</a>
-		<a href="/about" class="hover:text-gray-400">About</a>
+		<button on:click={() => {window.location.href="/"}} class="hover:text-gray-400">Home</button>
+		<button on:click={() => {window.location.href="/dashboard"}} class="hover:text-gray-400">Dashboard</button>
+		<button on:click={() => {window.location.href="/calculator"}} class="hover:text-gray-400">Calculator</button>
+		<button on:click={() => {window.location.href="/about"}} class="hover:text-gray-400">About</button>
 
 		{#if userAuthenticated}
 			<button on:click={logoutHandler} class="hover:text-gray-400">Logout</button>
