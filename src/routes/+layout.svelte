@@ -3,7 +3,7 @@
 	import Navbar from './Navbar.svelte';
 </script>
 
-<div id="wip">WIP</div>
+<div id="wip" class="md:text-5xl md:w-14">WIP</div>
 
 <Navbar />
 
@@ -11,7 +11,6 @@
 
 <style>
 	#wip {
-		font-size: 50px;
 		position: absolute;
 		z-index: 2;
 		top: 100px;

@@ -69,15 +69,15 @@
 		retrieveDataFromLocalStorage();
 	});
 </script>
-
+<div class="min-h-screen">
 <br />
-<div class="flex justify-left">
-	<div class="flex justify-left items-start h-screen px-10">
+<div class="md:flex md:justify-left ">
+	<div class="flex justify-center items-start  px-5 md:px-10">
 		<div class="text-left">
-			<h1 class="py-50 text-6xl">SGPA Calculator</h1>
+			<h1 class="py-50 md:text-6xl text-3xl">SGPA Calculator</h1>
 			<select
 				id="sem"
-				class="text-blue-400 text-2xl bg-inherit py-3"
+				class="text-blue-400 text-2xl bg-inherit md:py-3"
 				bind:value={sem}
 				on:change={clearItems}
 			>
@@ -102,24 +102,24 @@
 				<option value="cyber">Cyber</option>
 			</select>
 
-			<div class="py-5">
+			<div class="md:py-5">
 				{#if branch && sem}
-					<table class="px-10 py-10 rounded-lg bg-[#CFDDEB]">
+					<table class="md:px-10 md:py-10 rounded-lg bg-[#CFDDEB]">
 						<thead>
 							<tr>
-								<th class="border-b border-black p-4">Course</th>
-								<th class="border-b border-black p-4">Credit</th>
-								<th class="border-b border-black p-4">Grade</th>
+								<th class="border-b border-black p-2 md:p-4">Course</th>
+								<th class="border-b border-black p-2 md:p-4">Credit</th>
+								<th class="border-b border-black p-2 md:p-4">Grade</th>
 							</tr>
 						</thead>
 						<tbody>
 							{#each Object.entries(data[sem][branch]) as [courseCode, credit], idx}
 								<tr>
-									<td class="p-4">{courseCode}</td>
-									<td class="p-4">{credit}</td>
-									<td class="p-4">
+									<td class="md:p-4 p-2">{courseCode}</td>
+									<td class="md:p-4 p-2 justify-center">{credit}</td>
+									<td class="md:p-4 p-2">
 										<select
-											class="bg-[#CFDDEB]"
+											class="bg-[#CFDDEB] w-10 md:w-20 flex justify-center"
 											id="sem"
 											bind:value={grade[idx]}
 											on:change={() => {
@@ -148,12 +148,13 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex-col items-left justify-center h-screen px-10">
-		<p id="res" class="text-6xl"></p>
-		<p id="result" class="py-5 text-blue-500 text-8xl"></p>
+	<br>
+	<div class="flex-col items-left justify-center px-10">
+		<p id="res" class="md:text-6xl text-3xl"></p>
+		<p id="result" class="py-5 text-blue-500 md:text-8xl text-4xl"></p>
 	</div>
 </div>
-
+</div>
 <style>
 	table {
 		/* height: 100px; */

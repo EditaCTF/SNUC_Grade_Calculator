@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class='flex justify-left items-center min-h-screen overflow-hidden px-10'>
+<div class='flex  items-center min-h-screen w-full px-10'>
     <div class=''>
         <h1 class='py-50 text-6xl'>GPA Calculator</h1><br />
         <p class='text-xl'>Made and fine-tuned for SNU Chennai students.</p>

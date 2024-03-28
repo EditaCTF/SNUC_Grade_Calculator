@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-  overflow: hidden;
   position: relative;
   width: 100%;
   height: fit-content;
