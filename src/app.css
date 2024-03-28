@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  overflow: hidden;
   position: relative;
   width: 100%;
   height: fit-content;
@@ -15,7 +16,7 @@ body:before {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to bottom left, #ffffff, #C2DEFF);
+  background-image: linear-gradient(to bottom, #ffffff, #DAEBFF);
   z-index: -1;
 }
 
