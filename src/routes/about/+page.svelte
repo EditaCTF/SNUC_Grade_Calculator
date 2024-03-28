@@ -60,7 +60,9 @@
 								<div>
 									<p class="px-10 py-5 text-xl">Try3D</p>
 								</div>
-						
+								<div>
+									<p class="text-xs color-grey">Saran Shankar</p>
+								</div>
 							</div>
 							<div class="flex items-center ml-5">
 								<img class="px-2 hover:cursor-pointer" src="discord.png" alt="discord" on:click={() => {window.open("https://discord.com/users/670216971207573504")}} />
