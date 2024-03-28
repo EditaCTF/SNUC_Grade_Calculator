@@ -30,6 +30,7 @@
         // (document.getElementById('result') as HTMLElement).innerText = finalGPA.toFixed(2);
         localStorage.setItem('result', finalGPA.toFixed(2));
         saveDataToLocalStorage();
+        displayDiv();
     }
 
     function clearItems() {
@@ -60,13 +61,17 @@
         }
     }
 
+    function displayDiv() {
+        document.getElementById('res').innerText = 'Your predicted SGPA is';
+        document.getElementById('result').innerText = finalGPA.toFixed(2);
+    }
     onMount(() => {
         retrieveDataFromLocalStorage();
     });
 </script>
 <br>
 <br>
-<div class='flex'>
+<div class='flex justify-left'>
 <div class='flex justify-left items-start h-screen px-10'>
   <div class='text-left'>
       <h1 class='py-50 text-6xl'>SGPA Calculator</h1>
@@ -123,9 +128,8 @@
     </div>
   </div>
 </div>
-<div id='res' class='flex items-start h-screen px-10 flex-col'>
-  <h1 class='py-50 text-6xl'>Your predicted SGPA is</h1>
-  <p id='result' class='py-32 flex justify-center mx-auto text-blue-500 text-8xl'>{finalGPA.toFixed(2)}</p>
+<div class='flex-col items-left justify-center h-screen px-10'>
+    <p id='res' class='text-6xl'></p>
+    <p id='result' class='py-5 text-blue-500 text-8xl'></p>
+</div>  
 </div>
-</div>
-
