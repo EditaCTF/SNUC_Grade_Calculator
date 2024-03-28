@@ -1,34 +1,34 @@
 {
     "1": {
       "cyber": {
-        "MA1001": 4,
-        "EN1001": 3,
-        "CS1001": 3,
-        "CS1009": 4,
-        "CS1801": 2,
-        "CS1703": 3,
-        "PH1001T": 3,
-        "PH1801T": 2
+        "Linear Algebra": 4,
+        "English for Engineers": 3,
+        "Programming in C": 3,
+        "Cyber Security Essentials": 4,
+        "Programming in C Lab": 2,
+        "Digital Design + Lab": 3,
+        "Engineering Physics": 3,
+        "Engineering Physics Lab": 2
       },
       "aids": {
-        "EN1001": 3,
-        "MA1001": 4,
-        "PH1001T": 3,
-        "BS1001": 2,
-        "CS1001": 3,
-        "CS1703": 3,
-        "CS1801": 2,
-        "PH1801T": 2
+        "English for Engineers": 3,
+        "Linear Algebra": 4,
+        "Engineering Physics": 3,
+        "Environmental Science and Engineering": 2,
+        "Programming in C": 3,
+        "Digital Design + Lab": 3,
+        "Programming in C Lab": 2,
+        "Engineering Physics Lab": 2
       },
       "iot": {
-        "EN1001": 3,
-        "MA1001": 3,
-        "CS1001": 3,
-        "BS1001": 2,
-        "CS1005": 3,
-        "CS1007": 3,
-        "CS1801": 2,
-        "CS1803": 2
+        "English for Engineers": 3,
+        "Linear Algebra": 3,
+        "Programming in C": 3,
+        "Environmental Science and Engineering": 2,
+        "Digital Design and Microprocessor": 3,
+        "Basics of Electrical and Electronics Engineering": 3,
+        "Programming in C Lab": 2,
+        "Digital Design and Microprocessor Lab": 2
       }
     },
     "2": {
