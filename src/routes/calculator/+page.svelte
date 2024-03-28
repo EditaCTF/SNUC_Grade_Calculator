@@ -116,7 +116,7 @@
                           <option value=7>B+</option>
                           <option value=6>B</option>
                           <option value=5>P</option>
-                          <option value=0>RE/AB</option>
+                          <option value=0>RA/AB</option>
                       </select>
                   </td>
               </tr>

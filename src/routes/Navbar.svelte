@@ -10,7 +10,7 @@
 	}
 </script>
 <!-- window.location.href = '/dashboard' -->
-<nav class="flex justify-between items-center py-4 px-6 ">
+<nav class="flex justify-between items-center py-2 px-6 ">
 	<div class="flex items-center">
 		<a href="/">
 		<img src="/image.png" alt="Logo" class="h-16 mr-2" />
