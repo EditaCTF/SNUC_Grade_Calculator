@@ -24,10 +24,10 @@
 								</div>
 							</div>
 							<div class="flex items-center ml-5">
-								<img class="px-2" src="discord.png" alt="discord" />
-								<img class="px-2" src="github.png" alt="github" />
-								<img class="px-2" src="linkedin.png" alt="linkedin" />
-								<img class="px-2" src="x.png" alt="x" />
+								<img class="px-2 hover:cursor-pointer" src="discord.png" alt="discord" on:click={() => {window.open("https://discord.com/users/528963356082700289")}}/>
+								<img class="px-2 hover:cursor-pointer" src="github.png" alt="github" on:click={() => {window.open("https://github.com/hotaru-hspr")}} />
+								<img class="px-2 hover:cursor-pointer" src="linkedin.png" alt="linkedin" on:click={() => {window.open("https://www.linkedin.com/in/prajesh-raam/")}} />
+								<img class="px-2 hover:cursor-pointer" src="x.png" alt="x" on:click={() => {window.open("https://x.com/hotaru_hspr")}} />
 							</div>
 						</div>
 						<div class="flex bg-[#DAE9FF] rounded-xl w-192 px-5 py-5 ml-5">
@@ -45,9 +45,9 @@
 								</div>
 							</div>
 							<div class="flex items-center ml-5">
-								<img class="px-2" src="discord.png" alt="discord" />
-								<img class="px-2" src="github.png" alt="github" />
-								<img class="px-2" src="linkedin.png" alt="linkedin" />
+								<img class="px-2 hover:cursor-pointer" src="discord.png" alt="discord" on:click={() => {window.open("https://discord.com/users/813371659738021919")}} />
+								<img class="px-2 hover:cursor-pointer" src="github.png" alt="github" on:click={() => {window.open("https://github.com/FrenzyVJN")}} />
+								<img class="px-2 hover:cursor-pointer" src="linkedin.png" alt="linkedin" on:click={() => {window.open("https://www.linkedin.com/in/vijayan-sankar/")}} />
 							</div>
 						</div>
 					</div>
@@ -69,9 +69,9 @@
 								</div>
 							</div>
 							<div class="flex items-center ml-5">
-								<img class="px-2" src="discord.png" alt="discord" />
-								<img class="px-2" src="github.png" alt="github" />
-								<img class="px-2" src="linkedin.png" alt="linkedin" />
+								<img class="px-2 hover:cursor-pointer" src="discord.png" alt="discord" on:click={() => {window.open("https://discord.com/users/670216971207573504")}} />
+								<img class="px-2 hover:cursor-pointer" src="github.png" alt="github" on:click={() => {window.open("https://github.com/Try3D")}} />
+								<img class="px-2 hover:cursor-pointer" src="linkedin.png" alt="linkedin" on:click={() => {window.open("https://www.linkedin.com/in/saranshankar/")}} />
 							</div>
 						</div>
 						<div class="flex bg-[#DAE9FF] rounded-xl w-192 px-5 py-5 ml-5">
@@ -86,9 +86,9 @@
 								</div>
 							</div>
 							<div class="flex items-center ml-5">
-								<img class="px-2" src="discord.png" alt="discord" />
-								<img class="px-2" src="github.png" alt="github" />
-								<img class="px-2" src="x.png" alt="x" />
+								<img class="px-2 hover:cursor-pointer" src="discord.png" alt="discord"  on:click={() => {window.open("https://discord.gg/Qr3PsJfRF4")}} />
+								<img class="px-2 hover:cursor-pointer" src="github.png" alt="github" on:click={() => {window.open("https://github.com/EditaCTF")}} />
+								<img class="px-2 hover:cursor-pointer" src="x.png" alt="x" on:click={() => {window.open("https://x.com/editactf")}} />
 							</div>
 						</div>
 					</div>
