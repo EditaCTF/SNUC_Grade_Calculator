@@ -9,7 +9,7 @@
 			<div class="flex flex-col">
 				<div class="flex">
 					<div class="flex">
-						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 shadow-lg">
+						<div class="md:flex bg-[#DAE9FF] hover:scale-110 rounded-xl w-1/2 px-5 py-5 shadow-lg">
 							<div class="flex items-center justify-center">
 								<div class="flex">
 									<img src="/hotaru.png" alt="hotaru" />
@@ -28,7 +28,7 @@
 								<img class="px-2 hover:cursor-pointer" src="x.png" alt="x" on:click={() => {window.open("https://x.com/hotaru_hspr")}} />
 							</div>
 						</div>
-						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 ml-5 shadow-lg">
+						<div class="md:flex bg-[#DAE9FF] hover:scale-110 rounded-xl w-1/2 px-5 py-5 ml-5 shadow-lg">
 							<div class="flex justify-center items-center">
 								<div class="flex">
 									<img src="/frenzy.png" alt="vjn" />
@@ -50,7 +50,7 @@
 				</div>
 				<div class="flex mt-10">
 					<div class="flex">
-						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 shadow-lg">
+						<div class="md:flex bg-[#DAE9FF] hover:scale-110 rounded-xl w-1/2 px-5 py-5 shadow-lg">
 							<div class="flex items-center justify-center">
 								<div class="flex">
 									<img src="/try3d.png" alt="try3d" />
@@ -68,7 +68,7 @@
 								<img class="px-2 hover:cursor-pointer" src="x.png" alt="x" on:click={() => {window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")}} />
 							</div>
 						</div>
-						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 ml-5 shadow-lg">
+						<div class="md:flex bg-[#DAE9FF] hover:scale-110 rounded-xl w-1/2 px-5 py-5 ml-5 shadow-lg">
 							<div class="flex justify-center items-center">
 								<div class="flex">
 									<img src="/edita.png" alt="edita" />
