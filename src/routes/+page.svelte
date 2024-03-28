@@ -7,7 +7,7 @@
         <p class='text-xl'>Made and fine-tuned for SNU Chennai students.</p>
         <p class='text-xl'>Calculate your SGPA & CGPA and store them for future access and calculations, when</p>
         <p class='text-xl'>doom strikes back again next semester.</p><br>
-        <div class='bg-[#BCD6FF] w-fit rounded-2xl px-3 py-3'>
+        <div class='bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3'>
             <button on:click={() => {window.location.href="/calculator"}}>Start Calculating</button>
         </div>
     </div>

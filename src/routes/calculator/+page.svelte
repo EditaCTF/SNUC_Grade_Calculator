@@ -104,7 +104,7 @@
 
 			<div class="md:py-5">
 				{#if branch && sem}
-					<table class="md:px-10 md:py-10 rounded-lg bg-[#CFDDEB]">
+					<table class="md:px-10 md:py-10 rounded-lg bg-[#DAEDFF]">
 						<thead>
 							<tr>
 								<th class="border-b border-black p-2 md:p-4">Course</th>
@@ -119,7 +119,7 @@
 									<td class="md:p-4 p-2 justify-center">{credit}</td>
 									<td class="md:p-4 p-2">
 										<select
-											class="bg-[#CFDDEB] w-10 md:w-20 flex justify-center"
+											class="bg-[#DAEDFF] w-10 md:w-20 flex justify-center"
 											id="sem"
 											bind:value={grade[idx]}
 											on:change={() => {
@@ -141,7 +141,7 @@
 						</tbody>
 					</table>
 					<br />
-					<button class="flex bg-[#BCD6FF] w-fit rounded-2xl px-3 py-3" on:click={calculateHandler}
+					<button class="flex bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3" on:click={calculateHandler}
 						>Calculate</button
 					>
 				{/if}

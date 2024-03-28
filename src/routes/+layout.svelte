@@ -3,7 +3,7 @@
 	import Navbar from './Navbar.svelte';
 </script>
 
-<div id="wip" class="md:text-5xl md:w-14">WIP</div>
+<div id="wip" class="px-5 py-5 md:text-5xl md:w-14 shadow-lg">WIP!</div>
 
 <Navbar />
 
