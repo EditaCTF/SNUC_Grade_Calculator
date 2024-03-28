@@ -65,7 +65,7 @@
 									<p class="px-10 py-5 text-xl">Try3D</p>
 								</div>
 								<div>
-									<p class="text-xs color-grey">Saran Shankar</p>
+									<!-- <p class="text-xs color-grey">Saran Shankar</p> -->
 								</div>
 							</div>
 							<div class="flex items-center ml-5">
