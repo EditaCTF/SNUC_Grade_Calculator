@@ -107,7 +107,7 @@
 					<table class="px-10 py-10 rounded-lg bg-[#CFDDEB]">
 						<thead>
 							<tr>
-								<th class="border-b border-black p-4">Course Code</th>
+								<th class="border-b border-black p-4">Course</th>
 								<th class="border-b border-black p-4">Credit</th>
 								<th class="border-b border-black p-4">Grade</th>
 							</tr>
