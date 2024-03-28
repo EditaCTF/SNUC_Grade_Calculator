@@ -50,7 +50,7 @@
 				</div>
 				<div class="flex mt-10">
 					<div class="flex">
-						<div class="md:flex bg-[#DAE9FF]rounded-xl w-1/2 px-5 py-5 shadow-lg">
+						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 shadow-lg">
 							<div class="flex items-center justify-center">
 								<div class="flex">
 									<img src="/try3d.png" alt="try3d" />
