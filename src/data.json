@@ -29,6 +29,21 @@
         "Basics of Electrical and Electronics Engineering": 3,
         "Programming in C Lab": 2,
         "Digital Design and Microprocessor Lab": 2
+      },
+      "bcom": {
+        "Financial Accounting - Principles and Practice - I": 5,
+        "Commercial Law": 4,
+        "Business Mathematics": 5,
+        "Microeconomics": 3,
+        "Business Communication": 4
+      },
+      "bcompa": {
+        "Financial Accounting - Principles and Practice - I": 5,
+        "Commercial Law": 4,
+        "Business Mathematics and Logical Reasoning for Professional Accounting": 4,
+        "Business Economics": 4,
+        "Business and Commercial Knowledge": 2,
+        "Business Communication": 4
       }
     },
     "2": {
