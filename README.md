@@ -1,38 +1,32 @@
-# create-svelte
+---
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+# LabPartnerAI
 
-## Creating a project
+LabPartnerAI is an AI-powered web application designed to assist students in completing their Python and C++ assignments efficiently. By leveraging state-of-the-art AI technology, LabPartnerAI provides tailored guidance and code generation for various assignment tasks, helping students understand concepts and produce high-quality solutions.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- **Python Lab Assistance**: Get assistance with Python programming assignments, including problem understanding, algorithm generation, program code generation, and sample output creation.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- **C++ Lab Assistance**: Similar to Python Lab, LabPartnerAI provides assistance with C++ programming assignments, covering problem understanding, algorithm generation, program code generation, and sample output creation.
 
-## Developing
+- **General Assistance**: For general inquiries or assistance beyond specific assignment tasks, LabPartnerAI offers support to address various programming-related questions.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Usage
 
-```bash
-npm run dev
+1. **Input Prompt**: Enter your assignment prompt or question in the provided input field.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+2. **API Key**: Enter your Gemini API key to access the AI model for generating content.
 
-## Building
+3. **Select Option**: Choose the appropriate option based on your assignment type:
+   - **Python Lab**: Select this option for Python programming assignments.
+   - **C++ Lab**: Select this option for C++ programming assignments.
+   - **General**: Select this option for general programming-related inquiries.
 
-To create a production version of your app:
+4. **Ask**: Click the "Ask" button to submit your query and receive AI-generated assistance.
 
-```bash
-npm run build
-```
+## Contributing
 
-You can preview the production build with `npm run preview`.
+Contributions to LabPartnerAI are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+---
