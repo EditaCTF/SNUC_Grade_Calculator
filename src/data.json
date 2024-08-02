@@ -86,20 +86,18 @@
 			"Programming in Python Lab": 2
 		},
 		"bcom": {
-			"Financial Accounting - Principles and Practice - II": 4,
-			"Cost Accounting": 5,
-			"Probability and Statistics": 4,
-			"Macroeconomics": 3,
+			"Financial Accounting - II": 4,
+			"Statistics for Business - I": 4,
 			"Computer Applications in Business": 4,
-			"Company Law": 4
+			"Environmental Management and Sustainability": 3,
+			"Fundamentals of Macroeconomics": 3
 		},
 		"bcompa": {
 			"Financial Accounting - Principles and Practice - II": 4,
-			"Auditing and Assurance": 4,
-			"Taxation I - Direct Taxes": 5,
-			"Economics for Finance": 3,
-			"Cost and Management Accounting": 5,
-			"Statistical Methods for Professional Accounting": 4
+			"Statistical Methods for Professional Accounting": 5,
+			"Strategic Management": 3,
+			"Communication for Professional Accountants": 3,
+			"Spreadsheet Basics (Lab)": 2
 		},
 		"bsc": {
 			"Microeconomics - II": 4,
