@@ -21,7 +21,7 @@
 	<div class="flex space-x-2 md:space-x-4">
 		<button
 			on:click={() => {
-				window.location.href = '/';
+				window.location.href = '/calculator';
 			}}
 			class="hover:text-blue-500 text-sm md:text-lg">Calculator</button
 		>
