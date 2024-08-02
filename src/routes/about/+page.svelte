@@ -19,13 +19,40 @@
 								<div>
 									<p class="px-10 py-5 text-xl">hotaru</p>
 								</div>
-						
 							</div>
 							<div class="flex items-center ml-10" style="align-items: center;">
-								<img class="px-2 hover:cursor-pointer" src="discord.png" alt="discord" on:click={() => {window.open("https://discord.com/users/528963356082700289")}}/>
-								<img class="px-2 hover:cursor-pointer" src="github.png" alt="github" on:click={() => {window.open("https://github.com/hotaru-hspr")}} />
-								<img class="px-2 hover:cursor-pointer" src="linkedin.png" alt="linkedin" on:click={() => {window.open("https://www.linkedin.com/in/prajesh-raam/")}} />
-								<img class="px-2 hover:cursor-pointer" src="x.png" alt="x" on:click={() => {window.open("https://x.com/hotaru_hspr")}} />
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="discord.png"
+									alt="discord"
+									on:click={() => {
+										window.open('https://discord.com/users/528963356082700289');
+									}}
+								/>
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="github.png"
+									alt="github"
+									on:click={() => {
+										window.open('https://github.com/hotaru-hspr');
+									}}
+								/>
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="linkedin.png"
+									alt="linkedin"
+									on:click={() => {
+										window.open('https://www.linkedin.com/in/prajesh-raam/');
+									}}
+								/>
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="x.png"
+									alt="x"
+									on:click={() => {
+										window.open('https://x.com/hotaru_hspr');
+									}}
+								/>
 							</div>
 						</div>
 						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 ml-5 shadow-lg">
@@ -38,12 +65,32 @@
 								<div>
 									<p class="px-10 py-5 text-xl">FrenzyVJN</p>
 								</div>
-							
 							</div>
 							<div class="flex items-center ml-10" style="align-items: center;">
-								<img class="px-2 hover:cursor-pointer" src="discord.png" alt="discord" on:click={() => {window.open("https://discord.com/users/813371659738021919")}} />
-								<img class="px-2 hover:cursor-pointer" src="github.png" alt="github" on:click={() => {window.open("https://github.com/FrenzyVJN")}} />
-								<img class="px-2 hover:cursor-pointer" src="linkedin.png" alt="linkedin" on:click={() => {window.open("https://www.linkedin.com/in/vijayan-sankar/")}} />
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="discord.png"
+									alt="discord"
+									on:click={() => {
+										window.open('https://discord.com/users/813371659738021919');
+									}}
+								/>
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="github.png"
+									alt="github"
+									on:click={() => {
+										window.open('https://github.com/FrenzyVJN');
+									}}
+								/>
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="linkedin.png"
+									alt="linkedin"
+									on:click={() => {
+										window.open('https://www.linkedin.com/in/vijayan-sankar/');
+									}}
+								/>
 							</div>
 						</div>
 					</div>
@@ -62,10 +109,38 @@
 								</div>
 							</div>
 							<div class="flex items-center ml-10" style="align-items: center;">
-								<img class="px-2 hover:cursor-pointer" src="discord.png" alt="discord" on:click={() => {window.open("https://discord.com/users/670216971207573504")}} />
-								<img class="px-2 hover:cursor-pointer" src="github.png" alt="github" on:click={() => {window.open("https://github.com/Try3D")}} />
-								<img class="px-2 hover:cursor-pointer" src="linkedin.png" alt="linkedin" on:click={() => {window.open("https://www.linkedin.com/in/saranshankar/")}} />
-								<img class="px-2 hover:cursor-pointer" src="x.png" alt="x" on:click={() => {window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")}} />
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="discord.png"
+									alt="discord"
+									on:click={() => {
+										window.open('https://discord.com/users/670216971207573504');
+									}}
+								/>
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="github.png"
+									alt="github"
+									on:click={() => {
+										window.open('https://github.com/Try3D');
+									}}
+								/>
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="linkedin.png"
+									alt="linkedin"
+									on:click={() => {
+										window.open('https://www.linkedin.com/in/saranshankar/');
+									}}
+								/>
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="x.png"
+									alt="x"
+									on:click={() => {
+										window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+									}}
+								/>
 							</div>
 						</div>
 						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 ml-5 shadow-lg">
@@ -80,9 +155,30 @@
 								</div>
 							</div>
 							<div class="flex items-center ml-10" style="align-items: center;">
-								<img class="px-2 hover:cursor-pointer" src="discord.png" alt="discord"  on:click={() => {window.open("https://discord.gg/Qr3PsJfRF4")}} />
-								<img class="px-2 hover:cursor-pointer" src="github.png" alt="github" on:click={() => {window.open("https://github.com/EditaCTF")}} />
-								<img class="px-2 hover:cursor-pointer" src="x.png" alt="x" on:click={() => {window.open("https://x.com/editactf")}} />
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="discord.png"
+									alt="discord"
+									on:click={() => {
+										window.open('https://discord.gg/Qr3PsJfRF4');
+									}}
+								/>
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="github.png"
+									alt="github"
+									on:click={() => {
+										window.open('https://github.com/EditaCTF');
+									}}
+								/>
+								<img
+									class="px-2 hover:cursor-pointer"
+									src="x.png"
+									alt="x"
+									on:click={() => {
+										window.open('https://x.com/editactf');
+									}}
+								/>
 							</div>
 						</div>
 					</div>
@@ -94,6 +190,6 @@
 
 <style>
 	.w-192 {
-		width: 600px;
+		width: 1500px;
 	}
 </style>
