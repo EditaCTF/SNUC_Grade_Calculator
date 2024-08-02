@@ -4,8 +4,9 @@
 </script>
 
 <!-- <div id="wip" class="px-5 py-5 md:text-5xl md:w-14 shadow-lg">WIP!</div> -->
-
-<Navbar />
+<div class="pb-20">
+	<Navbar />
+</div>
 
 <slot />
 

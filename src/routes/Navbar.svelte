@@ -10,11 +10,12 @@
 	}
 </script>
 
-<!-- window.location.href = '/dashboard' -->
-<nav class="flex justify-between items-center py-2 px-6">
+<nav
+	class="fixed top-0 left-0 w-full flex justify-between items-center py-2 px-6 bg-white bg-opacity-20 backdrop-blur-md shadow-md"
+>
 	<div class="">
 		<a href="/">
-			<img src="/edita_logo.webp" alt="Logo" class="h-12 md:h-16 lg:h-20" />
+			<img src="/edita_logo.webp" alt="Logo" class="h-12 md:h-10 lg:h-12" />
 		</a>
 	</div>
 
@@ -23,7 +24,13 @@
 			on:click={() => {
 				window.location.href = '/calculator';
 			}}
-			class="hover:text-blue-500 text-sm md:text-lg">Calculator</button
+			class="hover:text-blue-500 text-xs md:text-sm">SGPA Calculator</button
+		>
+		<button
+			on:click={() => {
+				window.location.href = '/cgpa';
+			}}
+			class="hover:text-blue-500 text-xs md:text-sm">CGPA Calculator</button
 		>
 		<!-- <button on:click={() => {window.location.href="/dashboard"}} class="hover:text-gray-400">Dashboard</button> -->
 		<!-- <button on:click={() => {window.location.href="/calculator"}} class="hover:text-blue-500 text-sm md:text-lg">Calculator</button> -->
@@ -31,13 +38,13 @@
 			on:click={() => {
 				window.location.href = '/updates';
 			}}
-			class="hover:text-blue-500 text-sm md:text-lg">Updates</button
+			class="hover:text-blue-500 text-sm md:text-sm">Updates</button
 		>
 		<button
 			on:click={() => {
 				window.location.href = '/about';
 			}}
-			class="hover:text-blue-500 text-sm md:text-lg">About</button
+			class="hover:text-blue-500 text-sm md:text-sm">About</button
 		>
 
 		<!-- {#if userAuthenticated}
