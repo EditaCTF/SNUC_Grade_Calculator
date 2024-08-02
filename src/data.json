@@ -1,214 +1,347 @@
 {
-  "1": {
-    "cyber": {
-      "Linear Algebra": 4,
-      "English for Engineers": 3,
-      "Programming in C": 3,
-      "Cyber Security Essentials": 4,
-      "Programming in C Lab": 2,
-      "Digital Design + Lab": 3,
-      "Engineering Physics": 3,
-      "Engineering Physics Lab": 2
-    },
-    "aids": {
-      "English for Engineers": 3,
-      "Linear Algebra": 4,
-      "Engineering Physics": 3,
-      "Environmental Science and Engineering": 2,
-      "Programming in C": 3,
-      "Digital Design + Lab": 3,
-      "Programming in C Lab": 2,
-      "Engineering Physics Lab": 2
-    },
-    "iot": {
-      "English for Engineers": 3,
-      "Linear Algebra": 3,
-      "Programming in C": 3,
-      "Environmental Science and Engineering": 2,
-      "Digital Design and Microprocessor": 3,
-      "Basics of Electrical and Electronics Engineering": 3,
-      "Programming in C Lab": 2,
-      "Digital Design and Microprocessor Lab": 2
-    },
-    "bcom": {
-      "Financial Accounting - Principles and Practice - I": 5,
-      "Commercial Law": 4,
-      "Business Mathematics": 5,
-      "Microeconomics": 3,
-      "Business Communication": 4
-    },
-    "bcompa": {
-      "Financial Accounting - Principles and Practice - I": 5,
-      "Commercial Law": 4,
-      "Business Mathematics and Logical Reasoning for Professional Accounting": 4,
-      "Business Economics": 4,
-      "Business and Commercial Knowledge": 2,
-      "Business Communication": 4
-    }
-  },
-  "2": {
-    "aids": {
-      "English for Engineers": 3,
-      "Statistical Foundations of Data Science ": 3,
-      "Programming in Python": 2,
-      "Data Structures": 3,
-      "Computer Organization and Architecture": 3,
-      "Foundations of Data Science + Lab": 4,
-      "Data Structures Lab": 2,
-      "Programming in Python Lab ": 2
-    },
-    "cyber": {
-      "English for Engineers": 3,
-      "Probability and Statistics": 3,
-      "Programming in Python": 2,
-      "Data Structures": 3,
-      "Computer Organization and Architecture": 3,
-      "Classical Cryptography": 3,
-      "Data Structures Lab": 2,
-      "Programming in Python Lab ": 2
-    },
-    "iot": {
-      "English for Engineers": 3,
-      "Probability and Statistics": 3,
-      "Engineering Physics": 3,
-      "Computer Organization and Architecture": 3,
-      "Introduction to Internet of Things + Lab ": 4,
-      "Programming in Python": 2,
-      "Engineering Physics Lab": 2,
-      "Programming in Python Lab": 2
-    }
-  },
-  "3": {
-    "cyber": {
-      "Discrete Mathematics": 4,
-      "Object Oriented Programming": 3,
-      "Operating Systems + Lab": 4,
-      "Database Management System": 3,
-      "Modern Cryptography": 3,
-      "Cognitive Psychology": 2,
-      "OOP Lab": 2,
-      "Database Management Lab": 2
-    },
-    "aids": {
-      "Discrete Mathematics": 4,
-      "Object Oriented Programming": 3,
-      "Operating Systems + Lab": 4,
-      "Artificial Intelligence": 3,
-      "Exploratory Data Analysis and Data Visualization": 2,
-      "Cognitive Psychology": 2,
-      "OOP Lab": 2,
-      "Exploratory Data Analysis and Data Visualization Lab": 2
-    },
-    "iot": {
-      "Discrete Mathematics and Graph Theory": 4,
-      "Data Structures": 3,
-      "Object Oriented Programming": 3,
-      "Database Management Systems": 3,
-      "Software Engineering and Design": 3,
-      "Data Structures Lab": 2,
-      "Database Management Lab": 2
-    }
-  },
-  "4": {
-    "aids": {
-      "Design and Analysis of Algorithms": 3,
-      "Database Management System": 3,
-      "Computer Networks + Lab": 4,
-      "Machine Learning Techniques": 3,
-      "Data Mining": 1,
-      "OE1": 3,
-      "Database Management Lab": 2,
-      "Machine Learning Lab": 2
-    },
-    "cyber": {
-      "Design and Analysis of Algorithms": 3,
-      "Graph Theory": 4,
-      "Computer Networks": 3,
-      "Machine Learning Techniques": 3,
-      "OE1": 3,
-      "System Security Management +Lab": 4,
-      "Computer Networks Lab": 2,
-      "Machine Learning Lab": 2
-    },
-    "iot": {
-      "Operating Systems": 3,
-      "Design and Analysis of Algorithms": 3,
-      "Computer Networks": 3,
-      "Introduction to Sensor Technology": 3,
-      "Agile Scrum Process": 1,
-      "OE1": 3,
-      "Operating Systems Lab": 2,
-      "Computer Networks Lab": 2,
-      "Design Thinking": 1
-    }
-  },
-  "5": {
-    "aids": {
-      "Optimization Techniques": 3,
-      "Web Technologies": 3,
-      "Statistical Inference": 3,
-      "Big Data Analytics ": 3,
-      "Principles of Management": 2,
-      "Distributed Computing": 3,
-      "Introduction to Digital Signal Processing": 1,
-      "Big Data Analytics Lab": 2,
-      "Web Technologies Lab": 1
-    },
-    "iot": {
-      "Artificial Intelligence": 3,
-      "Web Technologies": 3,
-      "Software and Programming in IoT": 3,
-      "Distributed Computing": 2,
-      "Business Basics for Entrepreneurs": 0,
-      "PE1": 3,
-      "OE2": 3,
-      "Web Technologies Lab": 2,
-      "Artificial Intelligence Lab": 2,
-      "Software and Programming in IoT Lab": 1
-    },
-    "cyber": {
-      "Optimization Techniques": 3,
-      "High Performance Computing": 3,
-      "Artificial Intelligence": 3,
-      "Network Pen Testing": 3,
-      "Principles of Management": 2,
-      "Professional Elective I": 3,
-      "Pentesting": 2,
-      "CyberSec Lab": 1
-    }
-  },
-  "6": {
-    "cyber": {
-      "Image and video Processing": 3,
-      "Network Security": 2,
-      "Cloud Computing and Security": 3,
-      "Cyber Forensics": 3,
-      "Professional Elective II": 3,
-      "Open Elective II": 3,
-      "Cloud Security Lab": 2,
-      "Image and video Processing Lab": 2
-    },
-    "aids": {
-      "Image and Video Processing": 3,
-      "Business Basics for Entrepreneurs": 0,
-      "Natural Language Processing ": 3,
-      "Introduction to Speech Signal Processing": 1,
-      "PE1": 3,
-      "PE2": 3,
-      "OE2": 3,
-      "Image and Video Processing Lab": 2,
-      "Natural Language Processing Lab": 2
-    },
-    "iot": {
-      "Machine Learning Algorithms": 3,
-      "IoT Architecture and Protocols": 3,
-      "Cryptography Concepts": 2,
-      "PE1": 3,
-      "PE2": 3,
-      "OE2": 3,
-      "Industrial Training": 1,
-      "Mini Project": 1,
-      "Machine Learning Algorithms Lab": 2
-    }
-  }
+	"1": {
+		"cyber": {
+			"Linear Algebra": 4,
+			"English for Engineers": 3,
+			"Programming in C": 3,
+			"Cyber Security Essentials": 4,
+			"Programming in C Lab": 2,
+			"Digital Design + Lab": 3,
+			"Engineering Physics": 3,
+			"Engineering Physics Lab": 2
+		},
+		"aids": {
+			"English for Engineers": 3,
+			"Linear Algebra": 4,
+			"Engineering Physics": 3,
+			"Environmental Science and Engineering": 2,
+			"Programming in C": 3,
+			"Digital Design + Lab": 3,
+			"Programming in C Lab": 2,
+			"Engineering Physics Lab": 2
+		},
+		"iot": {
+			"English for Engineers": 3,
+			"Linear Algebra": 3,
+			"Programming in C": 3,
+			"Environmental Science and Engineering": 2,
+			"Digital Design and Microprocessor": 3,
+			"Basics of Electrical and Electronics Engineering": 3,
+			"Programming in C Lab": 2,
+			"Digital Design and Microprocessor Lab": 2
+		},
+		"bcom": {
+			"Financial Accounting - Principles and Practice - I": 5,
+			"Commercial Law": 4,
+			"Business Mathematics": 5,
+			"Microeconomics": 3,
+			"Business Communication": 4
+		},
+		"bcompa": {
+			"Financial Accounting - Principles and Practice - I": 5,
+			"Commercial Law": 4,
+			"Business Mathematics and Logical Reasoning for Professional Accounting": 4,
+			"Business Economics": 4,
+			"Business and Commercial Knowledge": 2,
+			"Business Communication": 4
+		},
+		"bsc": {
+			"Microeconomics - I": 4,
+			"Macroeconomics - I": 4,
+			"Mathematics - I": 4,
+			"Statistics - I": 4,
+			"Communication Skills in English": 4,
+			"MS Excel: Basics": 1
+		}
+	},
+	"2": {
+		"aids": {
+			"English for Engineers": 3,
+			"Statistical Foundations of Data Science ": 3,
+			"Programming in Python": 2,
+			"Data Structures": 3,
+			"Computer Organization and Architecture": 3,
+			"Foundations of Data Science + Lab": 4,
+			"Data Structures Lab": 2,
+			"Programming in Python Lab ": 2
+		},
+		"cyber": {
+			"English for Engineers": 3,
+			"Probability and Statistics": 3,
+			"Programming in Python": 2,
+			"Data Structures": 3,
+			"Computer Organization and Architecture": 3,
+			"Classical Cryptography": 3,
+			"Data Structures Lab": 2,
+			"Programming in Python Lab ": 2
+		},
+		"iot": {
+			"English for Engineers": 3,
+			"Probability and Statistics": 3,
+			"Engineering Physics": 3,
+			"Computer Organization and Architecture": 3,
+			"Introduction to Internet of Things + Lab ": 4,
+			"Programming in Python": 2,
+			"Engineering Physics Lab": 2,
+			"Programming in Python Lab": 2
+		},
+		"bcom": {
+			"Financial Accounting - Principles and Practice - II": 4,
+			"Cost Accounting": 5,
+			"Probability and Statistics": 4,
+			"Macroeconomics": 3,
+			"Computer Applications in Business": 4,
+			"Company Law": 4
+		},
+		"bcompa": {
+			"Financial Accounting - Principles and Practice - II": 4,
+			"Auditing and Assurance": 4,
+			"Taxation I - Direct Taxes": 5,
+			"Economics for Finance": 3,
+			"Cost and Management Accounting": 5,
+			"Statistical Methods for Professional Accounting": 4
+		},
+		"bsc": {
+			"Microeconomics - II": 4,
+			"Macroeconomics - II": 4,
+			"Mathematics - II": 4,
+			"Statistics - II": 4,
+			"Environmental Studies": 3,
+			"Programming in Python": 2,
+			"MS Excel: Advanced": 1
+		}
+	},
+	"3": {
+		"cyber": {
+			"Discrete Mathematics": 4,
+			"Object Oriented Programming": 3,
+			"Operating Systems + Lab": 4,
+			"Database Management System": 3,
+			"Modern Cryptography": 3,
+			"Cognitive Psychology": 2,
+			"OOP Lab": 2,
+			"Database Management Lab": 2
+		},
+		"aids": {
+			"Discrete Mathematics": 4,
+			"Object Oriented Programming": 3,
+			"Operating Systems + Lab": 4,
+			"Artificial Intelligence": 3,
+			"Exploratory Data Analysis and Data Visualization": 2,
+			"Cognitive Psychology": 2,
+			"OOP Lab": 2,
+			"Exploratory Data Analysis and Data Visualization Lab": 2
+		},
+		"iot": {
+			"Discrete Mathematics and Graph Theory": 4,
+			"Data Structures": 3,
+			"Object Oriented Programming": 3,
+			"Database Management Systems": 3,
+			"Software Engineering and Design": 3,
+			"Data Structures Lab": 2,
+			"Database Management Lab": 2
+		},
+		"bcom": {
+			"Financial Accounting - III": 5,
+			"Indian Economy": 3,
+			"Statistics for Business - II": 5,
+			"Fundamentals of Financial Management": 3,
+			"Fundamentals of Cost Accounting": 4,
+			"Spreadsheet Intermediate (Lab)": 2,
+			"Computerized Accounts with Tally (Lab)": 4
+		},
+		"bcompa": {
+			"Corporate Accounting": 6,
+			"Corporate and Other Laws": 4,
+			"Direct Taxes - I": 4,
+			"Indirect Taxes": 3,
+			"Cost Accounting": 4,
+			"Auditing and Assurance I": 4,
+			"Spreadsheet Intermediate (Lab)": 2
+		},
+		"bsc": {
+			"Money and Banking": 4,
+			"Basics Econometrics": 4,
+			"Introduction to Data Science": 4,
+			"Public Economics and Policy": 4,
+			"SQL Programming": 1,
+			"Econometrics Lab": 3
+		}
+	},
+	"4": {
+		"aids": {
+			"Design and Analysis of Algorithms": 3,
+			"Database Management System": 3,
+			"Computer Networks + Lab": 4,
+			"Machine Learning Techniques": 3,
+			"Data Mining": 1,
+			"OE1": 3,
+			"Database Management Lab": 2,
+			"Machine Learning Lab": 2
+		},
+		"cyber": {
+			"Design and Analysis of Algorithms": 3,
+			"Graph Theory": 4,
+			"Computer Networks": 3,
+			"Machine Learning Techniques": 3,
+			"OE1": 3,
+			"System Security Management +Lab": 4,
+			"Computer Networks Lab": 2,
+			"Machine Learning Lab": 2
+		},
+		"iot": {
+			"Operating Systems": 3,
+			"Design and Analysis of Algorithms": 3,
+			"Computer Networks": 3,
+			"Introduction to Sensor Technology": 3,
+			"Agile Scrum Process": 1,
+			"OE1": 3,
+			"Operating Systems Lab": 2,
+			"Computer Networks Lab": 2,
+			"Design Thinking": 1
+		},
+		"bcom": {
+			"Financial Accounting - Principles and Practice - II": 4,
+			"Cost Accounting": 5,
+			"Probability and Statistics": 4,
+			"Macroeconomics": 3,
+			"Computer Applications in Business": 4,
+			"Company Law": 4
+		},
+		"bcompa": {
+			"Financial Accounting - Principles and Practice - II": 4,
+			"Auditing and Assurance": 4,
+			"Taxation I - Direct Taxes": 5,
+			"Economics for Finance": 3,
+			"Cost and Management Accounting": 5,
+			"Statistical Methods for Professional Accounting": 4,
+			"DSE 1": 4
+		},
+		"bsc": {
+			"Indian Economy": 4,
+			"Introduction to Artificial Intelligence": 4,
+			"Data : Sources, Issue and Socio-Economic Analysis": 4,
+			"Academic Writing": 4,
+			"DSE 1": 4,
+			"DSE 2": 4
+		}
+	},
+	"5": {
+		"aids": {
+			"Optimization Techniques": 3,
+			"Web Technologies": 3,
+			"Statistical Inference": 3,
+			"Big Data Analytics ": 3,
+			"Principles of Management": 2,
+			"Distributed Computing": 3,
+			"Introduction to Digital Signal Processing": 1,
+			"Big Data Analytics Lab": 2,
+			"Web Technologies Lab": 1
+		},
+		"iot": {
+			"Artificial Intelligence": 3,
+			"Web Technologies": 3,
+			"Software and Programming in IoT": 3,
+			"Distributed Computing": 2,
+			"Business Basics for Entrepreneurs": 0,
+			"PE1": 3,
+			"OE2": 3,
+			"Web Technologies Lab": 2,
+			"Artificial Intelligence Lab": 2,
+			"Software and Programming in IoT Lab": 1
+		},
+		"cyber": {
+			"Optimization Techniques": 3,
+			"High Performance Computing": 3,
+			"Artificial Intelligence": 3,
+			"Network Pen Testing": 3,
+			"Principles of Management": 2,
+			"Professional Elective I": 3,
+			"Pentesting": 2,
+			"CyberSec Lab": 1
+		},
+		"bcom": {
+			"Financial Accounting - Principles and Practice - II": 4,
+			"Cost Accounting": 5,
+			"Probability and Statistics": 4,
+			"Macroeconomics": 3,
+			"Computer Applications in Business": 4,
+			"Company Law": 4
+		},
+		"bcompa": {
+			"Financial Accounting - Principles and Practice - II": 4,
+			"Auditing and Assurance": 4,
+			"Taxation I - Direct Taxes": 5,
+			"Economics for Finance": 3,
+			"Cost and Management Accounting": 5,
+			"Statistical Methods for Professional Accounting": 4,
+			"DSE 1": 4
+		},
+		"bsc": {
+			"Development Economics": 4,
+			"Basics of Finance": 4,
+			"International Economics": 4,
+			"Internship/Mini Project": 2,
+			"R Programming": 2,
+			"DSE 1": 4,
+			"DSE 2": 4
+		}
+	},
+	"6": {
+		"cyber": {
+			"Image and video Processing": 3,
+			"Network Security": 2,
+			"Cloud Computing and Security": 3,
+			"Cyber Forensics": 3,
+			"Professional Elective II": 3,
+			"Open Elective II": 3,
+			"Cloud Security Lab": 2,
+			"Image and video Processing Lab": 2
+		},
+		"aids": {
+			"Image and Video Processing": 3,
+			"Business Basics for Entrepreneurs": 0,
+			"Natural Language Processing ": 3,
+			"Introduction to Speech Signal Processing": 1,
+			"PE1": 3,
+			"PE2": 3,
+			"OE2": 3,
+			"Image and Video Processing Lab": 2,
+			"Natural Language Processing Lab": 2
+		},
+		"iot": {
+			"Machine Learning Algorithms": 3,
+			"IoT Architecture and Protocols": 3,
+			"Cryptography Concepts": 2,
+			"PE1": 3,
+			"PE2": 3,
+			"OE2": 3,
+			"Industrial Training": 1,
+			"Mini Project": 1,
+			"Machine Learning Algorithms Lab": 2
+		},
+		"bcom": {
+			"Financial Accounting - Principles and Practice - II": 4,
+			"Cost Accounting": 5,
+			"Probability and Statistics": 4,
+			"Macroeconomics": 3,
+			"Computer Applications in Business": 4,
+			"Company Law": 4
+		},
+		"bcompa": {
+			"Financial Accounting - Principles and Practice - II": 4,
+			"Auditing and Assurance": 4,
+			"Taxation I - Direct Taxes": 5,
+			"Economics for Finance": 3,
+			"Cost and Management Accounting": 5,
+			"Statistical Methods for Professional Accounting": 4,
+			"DSE 1": 4
+		},
+		"bsc": {
+			"DSE 2": 4,
+			"TS1": 4,
+			"TS2": 4,
+			"Project": 6
+		}
+	}
 }

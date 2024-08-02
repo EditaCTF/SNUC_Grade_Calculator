@@ -3,13 +3,13 @@
 	import Navbar from './Navbar.svelte';
 </script>
 
-<div id="wip" class="px-5 py-5 md:text-5xl md:w-14 shadow-lg">WIP!</div>
+<!-- <div id="wip" class="px-5 py-5 md:text-5xl md:w-14 shadow-lg">WIP!</div> -->
 
 <Navbar />
 
 <slot />
 
-<style>
+<!-- <style>
 	#wip {
 		position: absolute;
 		z-index: 2;
@@ -22,4 +22,4 @@
 		border-top-left-radius: 10px;
 		border-bottom-left-radius: 10px;
 	}
-</style>
+</style> -->

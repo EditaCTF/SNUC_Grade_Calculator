@@ -3,30 +3,31 @@
 @tailwind utilities;
 
 body {
-  position: relative;
-  width: 100%;
-  height: fit-content;
+	position: relative;
+	width: 100%;
+	height: fit-content;
 }
 
 body:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: linear-gradient(to top, #a4cefc, #daebff);
-  z-index: -1;
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to top, #a4cefc, #daebff);
+	z-index: -1;
 }
 
 * {
-  font-family: "Lexend", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+	font-family: 'Lexend', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
 }
 
-html, body {
-  min-height: 100%;
-  height: auto;    
+html,
+body {
+	min-height: 100%;
+	height: auto;
 }
