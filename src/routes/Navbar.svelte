@@ -14,7 +14,7 @@
 <nav class="flex justify-between items-center py-2 px-6">
 	<div class="">
 		<a href="/">
-			<img src="/image.png" alt="Logo" class="md:h-16 md:mr-2" />
+			<img src="/image.png" alt="Logo" class="h-12 md:h-16 lg:h-20" />
 		</a>
 	</div>
 
