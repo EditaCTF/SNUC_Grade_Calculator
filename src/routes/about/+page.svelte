@@ -1,187 +1,121 @@
 <script lang="ts">
 </script>
 
-<div class="flex justify-left items-center h-screen px-10">
-	<div class="text-left">
-		<h1 class="py-50 text-4xl">Made by</h1>
+<div class="flex flex-wrap justify-center items-center min-h-screen px-10">
+	<div class="text-left w-full">
+		<h1 class="py-5 text-4xl text-center">Made by</h1>
 		<br />
-		<div class="flex mt-5">
-			<div class="flex flex-col">
-				<div class="flex">
-					<div class="flex">
-						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 shadow-lg">
-							<div class="flex items-center justify-center">
-								<div class="flex">
-									<img src="/hotaru.png" alt="hotaru" />
-								</div>
-							</div>
-							<div class="flex items-center ml-2">
-								<div>
-									<p class="px-10 py-5 text-xl">hotaru</p>
-								</div>
-							</div>
-							<div class="flex items-center ml-10" style="align-items: center;">
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="discord.png"
-									alt="discord"
-									on:click={() => {
-										window.open('https://discord.com/users/528963356082700289');
-									}}
-								/>
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="github.png"
-									alt="github"
-									on:click={() => {
-										window.open('https://github.com/hotaru-hspr');
-									}}
-								/>
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="linkedin.png"
-									alt="linkedin"
-									on:click={() => {
-										window.open('https://www.linkedin.com/in/prajesh-raam/');
-									}}
-								/>
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="x.png"
-									alt="x"
-									on:click={() => {
-										window.open('https://x.com/hotaru_hspr');
-									}}
-								/>
-							</div>
-						</div>
-						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 ml-5 shadow-lg">
-							<div class="flex justify-center items-center">
-								<div class="flex">
-									<img src="/frenzy.png" alt="vjn" />
-								</div>
-							</div>
-							<div class="flex items-center ml-2">
-								<div>
-									<p class="px-10 py-5 text-xl">FrenzyVJN</p>
-								</div>
-							</div>
-							<div class="flex items-center ml-10" style="align-items: center;">
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="discord.png"
-									alt="discord"
-									on:click={() => {
-										window.open('https://discord.com/users/813371659738021919');
-									}}
-								/>
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="github.png"
-									alt="github"
-									on:click={() => {
-										window.open('https://github.com/FrenzyVJN');
-									}}
-								/>
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="linkedin.png"
-									alt="linkedin"
-									on:click={() => {
-										window.open('https://www.linkedin.com/in/vijayan-sankar/');
-									}}
-								/>
-							</div>
-						</div>
-					</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+			<!-- hotaru card -->
+			<div class="flex flex-col items-center bg-[#DAE9FF] rounded-xl w-full px-5 py-5 shadow-lg">
+				<img src="/hotaru.png" alt="hotaru" />
+				<p class="text-xl mt-5">hotaru</p>
+				<div class="flex space-x-2 mt-3">
+					<img
+						class="hover:cursor-pointer h-4"
+						src="discord.png"
+						alt="discord"
+						onclick="window.open('https://discord.com/users/528963356082700289')"
+					/>
+					<img
+						class="hover:cursor-pointer h-4"
+						src="github.png"
+						alt="github"
+						onclick="window.open('https://github.com/hotaru-hspr')"
+					/>
+					<img
+						class="hover:cursor-pointer h-4"
+						src="linkedin.png"
+						alt="linkedin"
+						onclick="window.open('https://www.linkedin.com/in/prajesh-raam/')"
+					/>
+					<img
+						class="hover:cursor-pointer h-4"
+						src="x.png"
+						alt="x"
+						onclick="window.open('https://x.com/hotaru_hspr')"
+					/>
 				</div>
-				<div class="flex mt-10">
-					<div class="flex">
-						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 shadow-lg">
-							<div class="flex items-center justify-center">
-								<div class="flex">
-									<img src="/try3d.png" alt="try3d" />
-								</div>
-							</div>
-							<div class="flex items-center ml-2">
-								<div>
-									<p class="px-10 py-5 text-xl">Try3D</p>
-								</div>
-							</div>
-							<div class="flex items-center ml-10" style="align-items: center;">
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="discord.png"
-									alt="discord"
-									on:click={() => {
-										window.open('https://discord.com/users/670216971207573504');
-									}}
-								/>
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="github.png"
-									alt="github"
-									on:click={() => {
-										window.open('https://github.com/Try3D');
-									}}
-								/>
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="linkedin.png"
-									alt="linkedin"
-									on:click={() => {
-										window.open('https://www.linkedin.com/in/saranshankar/');
-									}}
-								/>
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="x.png"
-									alt="x"
-									on:click={() => {
-										window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-									}}
-								/>
-							</div>
-						</div>
-						<div class="md:flex bg-[#DAE9FF] rounded-xl w-1/2 px-5 py-5 ml-5 shadow-lg">
-							<div class="flex justify-center items-center">
-								<div class="flex">
-									<img src="/edita.png" alt="edita" />
-								</div>
-							</div>
-							<div class="flex items-center ml-2">
-								<div>
-									<p class="px-10 py-5 text-xl">Team Edita</p>
-								</div>
-							</div>
-							<div class="flex items-center ml-10" style="align-items: center;">
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="discord.png"
-									alt="discord"
-									on:click={() => {
-										window.open('https://discord.gg/Qr3PsJfRF4');
-									}}
-								/>
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="github.png"
-									alt="github"
-									on:click={() => {
-										window.open('https://github.com/EditaCTF');
-									}}
-								/>
-								<img
-									class="px-2 hover:cursor-pointer"
-									src="x.png"
-									alt="x"
-									on:click={() => {
-										window.open('https://x.com/editactf');
-									}}
-								/>
-							</div>
-						</div>
-					</div>
+			</div>
+			<!-- FrenzyVJN card -->
+			<div class="flex flex-col items-center bg-[#DAE9FF] rounded-xl w-full px-5 py-5 shadow-lg">
+				<img src="/frenzy.png" alt="vjn" />
+				<p class="text-xl mt-5">FrenzyVJN</p>
+				<div class="flex space-x-2 mt-3">
+					<img
+						class="hover:cursor-pointer h-4"
+						src="discord.png"
+						alt="discord"
+						onclick="window.open('https://discord.com/users/813371659738021919')"
+					/>
+					<img
+						class="hover:cursor-pointer h-4"
+						src="github.png"
+						alt="github"
+						onclick="window.open('https://github.com/FrenzyVJN')"
+					/>
+					<img
+						class="hover:cursor-pointer h-4"
+						src="linkedin.png"
+						alt="linkedin"
+						onclick="window.open('https://www.linkedin.com/in/vijayan-sankar/')"
+					/>
+				</div>
+			</div>
+			<!-- Try3D card -->
+			<div class="flex flex-col items-center bg-[#DAE9FF] rounded-xl w-full px-5 py-5 shadow-lg">
+				<img src="/try3d.png" alt="try3d" />
+				<p class="text-xl mt-5">Try3D</p>
+				<div class="flex space-x-2 mt-3">
+					<img
+						class="hover:cursor-pointer h-4"
+						src="discord.png"
+						alt="discord"
+						onclick="window.open('https://discord.com/users/670216971207573504')"
+					/>
+					<img
+						class="hover:cursor-pointer h-4"
+						src="github.png"
+						alt="github"
+						onclick="window.open('https://github.com/Try3D')"
+					/>
+					<img
+						class="hover:cursor-pointer h-4"
+						src="linkedin.png"
+						alt="linkedin"
+						onclick="window.open('https://www.linkedin.com/in/saranshankar/')"
+					/>
+					<img
+						class="hover:cursor-pointer h-4"
+						src="x.png"
+						alt="x"
+						onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')"
+					/>
+				</div>
+			</div>
+			<!-- Team Edita card -->
+			<div class="flex flex-col items-center bg-[#DAE9FF] rounded-xl w-full px-5 py-5 shadow-lg">
+				<img src="/edita.png" alt="edita" />
+				<p class="text-xl mt-5">Team Edita</p>
+				<div class="flex space-x-2 mt-3">
+					<img
+						class="hover:cursor-pointer h-4"
+						src="discord.png"
+						alt="discord"
+						onclick="window.open('https://discord.gg/Qr3PsJfRF4')"
+					/>
+					<img
+						class="hover:cursor-pointer h-4"
+						src="github.png"
+						alt="github"
+						onclick="window.open('https://github.com/EditaCTF')"
+					/>
+					<img
+						class="hover:cursor-pointer h-4"
+						src="x.png"
+						alt="x"
+						onclick="window.open('https://x.com/editactf')"
+					/>
 				</div>
 			</div>
 		</div>
