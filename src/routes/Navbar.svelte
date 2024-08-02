@@ -24,13 +24,13 @@
 			on:click={() => {
 				window.location.href = '/calculator';
 			}}
-			class="hover:text-blue-500 text-xs md:text-sm">SGPA</button
+			class="hover:text-blue-500 text-sm md:text-sm">SGPA</button
 		>
 		<button
 			on:click={() => {
 				window.location.href = '/cgpa';
 			}}
-			class="hover:text-blue-500 text-xs md:text-sm">CGPA</button
+			class="hover:text-blue-500 text-sm md:text-sm">CGPA</button
 		>
 		<!-- <button on:click={() => {window.location.href="/dashboard"}} class="hover:text-gray-400">Dashboard</button> -->
 		<!-- <button on:click={() => {window.location.href="/calculator"}} class="hover:text-blue-500 text-sm md:text-lg">Calculator</button> -->
