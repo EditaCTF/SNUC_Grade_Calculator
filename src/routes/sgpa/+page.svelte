@@ -67,7 +67,7 @@
 	const pb = new PocketBase('https://edita.pockethost.io');
 	let isDisabled = false;
 	async function getCPGA(id: any) {
-		const record = await pb.collection('gpa').getOne('230111030601234');
+		const record = await pb.collection('gpa').getOne(id);
 		console.log(record);
 		console.log(credits);
 		let totalCredits = 0;
@@ -92,7 +92,7 @@
 		try {
 			const record = await pb.collection('gpa').create(data);
 		} catch (e) {
-			const record = await pb.collection('gpa').update('230111030601234', data);
+			const record = await pb.collection('gpa').update(id, data);
 		}
 	}
 
@@ -106,7 +106,6 @@
 		}
 		const data = {
 			id: id,
-			CGPA: finalGPA.toFixed(2),
 			Dept: branch
 		};
 		data[sem] = finalGPA.toFixed(2);
@@ -114,7 +113,7 @@
 		try {
 			const record = await pb.collection('gpa').create(data);
 		} catch (e) {
-			const record = await pb.collection('gpa').update('230111030601234', data);
+			const record = await pb.collection('gpa').update(id, data);
 		}
 		getCPGA(id);
 	}
