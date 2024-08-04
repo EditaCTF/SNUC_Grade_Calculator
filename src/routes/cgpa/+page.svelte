@@ -49,7 +49,7 @@
 		let totalCredits = 0;
 		let gpa = 0;
 		for (let i = 1; i <= 8; i++) {
-			if (record[i] == undefined) {
+			if (record[i] == undefined || record[i] == 0) {
 				continue;
 			}
 			else if (credits[i] == undefined) {
