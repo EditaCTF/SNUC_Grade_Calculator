@@ -1,37 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import data from '../../data.json';
-
+	import credits from '../../credits.json';
 	let branch: string;
 	let sem: number;
 	let grade: string[] = Array(10).fill('');
 	let finalGPA: number = 0;
-	function calculateHandler() {
-		console.log('Calculating....');
-
-		let totalCredits = 0;
-		let weightedSum = 0;
-
-		for (let idx = 0; idx < Object.keys(data[sem][branch]).length; idx++) {
-			const selectedGrade = parseInt(grade[idx]);
-			const [courseCode, credit] = Object.entries(data[sem][branch])[idx];
-
-			if (!isNaN(selectedGrade)) {
-				totalCredits += credit as number;
-				weightedSum += selectedGrade * (credit as number);
-			}
-		}
-
-		finalGPA = totalCredits !== 0 ? weightedSum / totalCredits : 0;
-
-		console.log('Total Credits:', totalCredits);
-		console.log('Weighted Sum:', weightedSum);
-		console.log('Final GPA:', finalGPA);
-		// (document.getElementById('result') as HTMLElement).innerText = finalGPA.toFixed(2);
-		localStorage.setItem('result', finalGPA.toFixed(2));
-		saveDataToLocalStorage();
-		displayDiv();
-	}
 
 	function clearItems() {
 		for (let i = 0; i < 10; i++) {
@@ -65,7 +39,30 @@
 		document.getElementById('res').innerText = 'Your predicted SGPA is';
 		document.getElementById('result').innerText = finalGPA.toFixed(2);
 	}
+	import PocketBase from 'pocketbase';
+	const pb = new PocketBase('https://edita.pockethost.io');
+	async function getCPGA() {
+		const record = await pb.collection('gpa').getOne('230111030601234')
+		console.log(record);
+		console.log(credits);
+		let totalCredits = 0;
+		for (let i = 1; i <= 8; i++) {
+			if (record[i] == undefined) {
+				continue;
+			}
+			else if (credits[i] == undefined) {
+				continue;
+			}
+			console.log(i,record[i],credits[i][record.Dept]);
+			totalCredits += credits[i][record.Dept];
+			finalGPA += (parseFloat(record[i]) * credits[i][record.Dept]);
+		}
+		finalGPA = finalGPA / totalCredits;
+		document.getElementById('result').innerText = finalGPA;
+	}
+
 	onMount(() => {
+		getCPGA();
 		retrieveDataFromLocalStorage();
 	});
 </script>
@@ -157,7 +154,7 @@
 		</div>
 		<br />
 		<div class="flex-col items-left justify-center px-10">
-			<p id="res" class="md:text-6xl text-3xl"></p>
+			<h2 class="mt-10 md:text-6xl">Your CGPA is</h2>
 			<p id="result" class="py-5 text-blue-500 md:text-8xl text-4xl"></p>
 		</div>
 	</div>

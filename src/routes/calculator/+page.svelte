@@ -6,22 +6,24 @@
 	let sem: number;
 	let grade: string[] = Array(10).fill('');
 	let finalGPA: number = 0;
+	let weightedSum: number = 0;
+	let totalCredits: number = 0;
 	function calculateHandler() {
 		console.log('Calculating....');
 
-		let totalCredits = 0;
-		let weightedSum = 0;
-
+		totalCredits = 0;
+		weightedSum = 0;
+		// let jsonScore = {};
 		for (let idx = 0; idx < Object.keys(data[sem][branch]).length; idx++) {
 			const selectedGrade = parseInt(grade[idx]);
 			const [courseCode, credit] = Object.entries(data[sem][branch])[idx];
-
+			// jsonScore[courseCode] = selectedGrade;
 			if (!isNaN(selectedGrade)) {
 				totalCredits += credit as number;
 				weightedSum += selectedGrade * (credit as number);
 			}
 		}
-
+		// console.log('JSON Score:', jsonScore);
 		finalGPA = totalCredits !== 0 ? weightedSum / totalCredits : 0;
 
 		console.log('Total Credits:', totalCredits);
@@ -60,7 +62,63 @@
 			finalGPA = parseFloat(storedFinalGPA);
 		}
 	}
+	import PocketBase from 'pocketbase';
+	import credits from '../../credits.json';
+	const pb = new PocketBase('https://edita.pockethost.io');
+	let isDisabled = false;
+	async function getCPGA(id: any) {
+		const record = await pb.collection('gpa').getOne('230111030601234')
+		console.log(record);
+		console.log(credits);
+		let totalCredits = 0;
+		for (let i = 1; i <= 8; i++) {
+			if (record[i] == undefined) {
+				continue;
+			}
+			else if (credits[i] == undefined) {
+				continue;
+			}
+			console.log(i,record[i],credits[i][record.Dept]);
+			totalCredits += credits[i][record.Dept];
+			finalGPA += (parseFloat(record[i]) * credits[i][record.Dept]);
+		}
+		finalGPA = finalGPA / totalCredits;
+		let data = {
+			"id": id,
+			"CGPA": finalGPA.toFixed(2),
+		};
+		console.log(data);
+		try{
+		const record = await pb.collection('gpa').create(data);
+		}
+		catch(e){
+			const record = await pb.collection('gpa').update("230111030601234", data);
+		}
+	}
 
+	async function pushToDB(e: any) {
+		isDisabled = true;
+		console.log(sem);
+		let id = document.getElementById('id').value + 1234;
+		if(id.length != 15){
+			alert("Enter a valid ID");
+			return;
+		}
+		const data = {
+			"id": id,
+			"CGPA": finalGPA.toFixed(2),
+			"Dept": branch,
+		};
+		data[sem] = finalGPA.toFixed(2);
+		console.log(data);
+		try{
+		const record = await pb.collection('gpa').create(data);
+		}
+		catch(e){
+			const record = await pb.collection('gpa').update("230111030601234", data);
+		}
+		getCPGA(id);
+	}
 	function displayDiv() {
 		document.getElementById('res').innerText = 'Your predicted SGPA is';
 		document.getElementById('result').innerText = finalGPA.toFixed(2);
@@ -68,6 +126,8 @@
 	onMount(() => {
 		retrieveDataFromLocalStorage();
 	});
+
+	
 </script>
 
 <div class="min-h-screen">
@@ -149,6 +209,12 @@
 							class="flex bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3"
 							on:click={calculateHandler}>Calculate</button
 						>
+						<input type="text" id='id' class="rounded-lg" placeholder="registration number">
+						<button
+							class="flex bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3"
+						on:click={pushToDB}>
+							pushToDB
+						</button>
 					{/if}
 				</div>
 			</div>
