@@ -162,7 +162,4 @@
 </div>
 
 <style>
-	table {
-		/* height: 100px; */
-	}
 </style>

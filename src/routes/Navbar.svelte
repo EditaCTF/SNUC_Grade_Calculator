@@ -1,13 +1,4 @@
 <script lang="ts">
-	import pocketbase from 'pocketbase';
-	const pb = new pocketbase('https://edita.pockethost.io');
-
-	let userAuthenticated = pb.authStore.isValid;
-
-	function logoutHandler() {
-		pb.authStore.clear();
-		window.location.href = '/';
-	}
 </script>
 
 <nav
@@ -20,38 +11,9 @@
 	</div>
 
 	<div class="flex space-x-2 md:space-x-4">
-		<button
-			on:click={() => {
-				window.location.href = '/calculator';
-			}}
-			class="hover:text-blue-500 text-sm md:text-sm">SGPA</button
-		>
-		<button
-			on:click={() => {
-				window.location.href = '/cgpa';
-			}}
-			class="hover:text-blue-500 text-sm md:text-sm">CGPA</button
-		>
-		<!-- <button on:click={() => {window.location.href="/dashboard"}} class="hover:text-gray-400">Dashboard</button> -->
-		<!-- <button on:click={() => {window.location.href="/calculator"}} class="hover:text-blue-500 text-sm md:text-lg">Calculator</button> -->
-		<button
-			on:click={() => {
-				window.location.href = '/updates';
-			}}
-			class="hover:text-blue-500 text-sm md:text-sm">Updates</button
-		>
-		<button
-			on:click={() => {
-				window.location.href = '/about';
-			}}
-			class="hover:text-blue-500 text-sm md:text-sm">About</button
-		>
-
-		<!-- {#if userAuthenticated}
-			<button on:click={logoutHandler} class="hover:text-gray-400">Logout</button>
-		{:else}
-			<a href="/register" class="hover:text-gray-400">Sign Up</a>
-			<a href="/login" class="hover:text-gray-400">Sign In</a>
-		{/if} -->
+		<a href="/calculator" class="hover:text-blue-500 text-sm md:text-sm">SGPA</a>
+		<a href="/cgpa" class="hover:text-blue-500 text-sm md:text-sm">CGPA</a>
+		<a href="/updates" class="hover:text-blue-500 text-sm md:text-sm">Updates</a>
+		<a href="about" class="hover:text-blue-500 text-sm md:text-sm">About</a>
 	</div>
 </nav>
