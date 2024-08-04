@@ -42,7 +42,8 @@
 	import PocketBase from 'pocketbase';
 	const pb = new PocketBase('https://edita.pockethost.io');
 	async function getCPGA() {
-		const record = await pb.collection('gpa').getOne('230111030601234')
+		let id = document.getElementById('id').value + 1234;
+		const record = await pb.collection('gpa').getOne(id);
 		console.log(record);
 		console.log(credits);
 		let totalCredits = 0;
@@ -66,7 +67,7 @@
 	}
 
 	onMount(() => {
-		getCPGA();
+		
 		retrieveDataFromLocalStorage();
 	});
 </script>
@@ -157,6 +158,10 @@
 			</div>
 		</div>
 		<br />
+		<input type="text" id="id" class="">
+		<button class="flex bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3" on:click={getCPGA}>
+			Calculate
+		</button>
 		<div class="flex-col items-left justify-center px-10">
 			<h2 class="mt-10 md:text-6xl">Your CGPA is</h2>
 			<p id="result" class="py-5 text-blue-500 md:text-8xl text-4xl"></p>
