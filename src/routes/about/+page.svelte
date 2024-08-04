@@ -46,7 +46,7 @@
 					<a href="https://www.linkedin.com/in/saranshankar/" target="_blank">
 						<img class="hover:cursor-pointer h-4" src="linkedin.webp" alt="linkedin" /></a
 					>
-					<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+					<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
 						<img class="hover:cursor-pointer h-4" src="x.webp" alt="x" />
 					</a>
 				</div>
