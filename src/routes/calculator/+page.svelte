@@ -71,6 +71,7 @@
 		console.log(record);
 		console.log(credits);
 		let totalCredits = 0;
+		let gpa = 0;
 		for (let i = 1; i <= 8; i++) {
 			if (record[i] == undefined) {
 				continue;
@@ -80,9 +81,10 @@
 			}
 			console.log(i,record[i],credits[i][record.Dept]);
 			totalCredits += credits[i][record.Dept];
-			finalGPA += (parseFloat(record[i]) * credits[i][record.Dept]);
+			gpa += (record[i] * credits[i][record.Dept]);
+			console.log(gpa);
 		}
-		finalGPA = finalGPA / totalCredits;
+		finalGPA = gpa / totalCredits;
 		let data = {
 			"id": id,
 			"CGPA": finalGPA.toFixed(2),
