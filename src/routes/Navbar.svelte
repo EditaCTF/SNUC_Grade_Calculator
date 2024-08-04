@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="flex space-x-2 md:space-x-4">
-		<a href="/calculator" class="hover:text-blue-500 text-sm md:text-sm">SGPA</a>
+		<a href="/sgpa" class="hover:text-blue-500 text-sm md:text-sm">SGPA</a>
 		<a href="/cgpa" class="hover:text-blue-500 text-sm md:text-sm">CGPA</a>
 		<a href="/updates" class="hover:text-blue-500 text-sm md:text-sm">Updates</a>
 		<a href="about" class="hover:text-blue-500 text-sm md:text-sm">About</a>

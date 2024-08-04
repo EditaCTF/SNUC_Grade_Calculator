@@ -67,7 +67,7 @@
 	const pb = new PocketBase('https://edita.pockethost.io');
 	let isDisabled = false;
 	async function getCPGA(id: any) {
-		const record = await pb.collection('gpa').getOne('230111030601234')
+		const record = await pb.collection('gpa').getOne('230111030601234');
 		console.log(record);
 		console.log(credits);
 		let totalCredits = 0;
@@ -75,65 +75,60 @@
 		for (let i = 1; i <= 8; i++) {
 			if (record[i] == undefined) {
 				continue;
-			}
-			else if (credits[i] == undefined) {
+			} else if (credits[i] == undefined) {
 				continue;
 			}
-			console.log(i,record[i],credits[i][record.Dept]);
+			console.log(i, record[i], credits[i][record.Dept]);
 			totalCredits += credits[i][record.Dept];
-			gpa += (record[i] * credits[i][record.Dept]);
+			gpa += record[i] * credits[i][record.Dept];
 			console.log(gpa);
 		}
 		finalGPA = gpa / totalCredits;
 		let data = {
-			"id": id,
-			"CGPA": finalGPA.toFixed(2),
+			id: id,
+			CGPA: finalGPA.toFixed(2)
 		};
 		console.log(data);
-		try{
-		const record = await pb.collection('gpa').create(data);
-		}
-		catch(e){
-			const record = await pb.collection('gpa').update("230111030601234", data);
+		try {
+			const record = await pb.collection('gpa').create(data);
+		} catch (e) {
+			const record = await pb.collection('gpa').update('230111030601234', data);
 		}
 	}
 
 	async function pushToDB(e: any) {
 		isDisabled = true;
 		console.log(sem);
-		let id = document.getElementById('id').value + 1234;
-		if(id.length != 15){
-			alert("Enter a valid ID");
+		let id = document.getElementById('id').value + 1234567;
+		if (id.length != 15) {
+			alert('Enter a valid Digital ID!');
 			return;
 		}
 		const data = {
-			"id": id,
-			"CGPA": finalGPA.toFixed(2),
-			"Dept": branch,
+			id: id,
+			CGPA: finalGPA.toFixed(2),
+			Dept: branch
 		};
 		data[sem] = finalGPA.toFixed(2);
 		console.log(data);
-		try{
-		const record = await pb.collection('gpa').create(data);
-		}
-		catch(e){
-			const record = await pb.collection('gpa').update("230111030601234", data);
+		try {
+			const record = await pb.collection('gpa').create(data);
+		} catch (e) {
+			const record = await pb.collection('gpa').update('230111030601234', data);
 		}
 		getCPGA(id);
 	}
 	function displayDiv() {
 		document.getElementById('res').innerText = 'Your predicted SGPA is';
 		document.getElementById('result').innerText = finalGPA.toFixed(2);
+		document.getElementById('push').style.display = 'block';
 	}
 	onMount(() => {
 		retrieveDataFromLocalStorage();
 	});
-
-	
 </script>
 
 <div class="min-h-screen">
-	<br />
 	<div class="md:flex md:justify-left">
 		<div class="flex justify-center items-start px-5 md:px-10">
 			<div class="text-left">
@@ -211,12 +206,6 @@
 							class="flex bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3"
 							on:click={calculateHandler}>Calculate</button
 						>
-						<input type="text" id='id' class="rounded-lg" placeholder="registration number">
-						<button
-							class="flex bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3"
-						on:click={pushToDB}>
-							pushToDB
-						</button>
 					{/if}
 				</div>
 			</div>
@@ -225,9 +214,36 @@
 		<div class="flex-col items-left justify-center px-10">
 			<p id="res" class="md:text-6xl text-3xl"></p>
 			<p id="result" class="py-5 text-blue-500 md:text-8xl text-4xl"></p>
+			<div id="push" class="flex push mt-10">
+				<p class="mb-2">
+					Save your SGPA to our database, for later reference and to <a
+						href="/cgpa"
+						class="underline">calculate your CGPA</a
+					> with your other SGPAs.
+				</p>
+				<p class="mb-2">
+					Enter your SNU Digital ID for you to access your data anytime across this website. No
+					other data is collected from you.
+				</p>
+				<input
+					type="text"
+					id="id"
+					class="rounded-lg w-fit rounded-2xl px-3 py-3"
+					placeholder="Digital ID"
+				/>
+				<button
+					class="flex bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3 mt-5"
+					on:click={pushToDB}
+				>
+					Save it in database
+				</button>
+			</div>
 		</div>
 	</div>
 </div>
 
 <style>
+	.push {
+		display: none;
+	}
 </style>
