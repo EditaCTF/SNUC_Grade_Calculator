@@ -6,7 +6,7 @@
 	let sem: number;
 	let grade: string[] = Array(10).fill('');
 	let finalGPA: number = 0;
-
+	let sem_wise = {};
 	function clearItems() {
 		for (let i = 0; i < 10; i++) {
 			grade[i] = '';
@@ -55,6 +55,8 @@
 				continue;
 			}
 			console.log(i, record[i], credits[i][record.Dept]);
+			document.getElementById('sem_' + i).innerText = `Semester ${i} GPA: ${record[i]}`;
+			sem_wise[i] = record[i];
 			totalCredits += credits[i][record.Dept];
 			gpa += record[i] * credits[i][record.Dept];
 			console.log(gpa);
@@ -63,6 +65,7 @@
 		console.log(gpa);
 		finalGPA = gpa / totalCredits;
 		document.getElementById('result').innerText = finalGPA.toFixed(4);
+		console.log(sem_wise);
 	}
 
 	onMount(() => {
@@ -92,6 +95,16 @@
 					</div>
 					<div class="text-5xl mt-5 ">Your CGPA is</div>
 					<div class="ml-10 mt-5 text-blue-500 text-7xl" id="result"></div>
+					<div class="mt-10">
+						<div class="text-2xl" id="sem_1"></div>
+						<div class="text-2xl" id="sem_2"></div>
+						<div class="text-2xl" id="sem_3"></div>
+						<div class="text-2xl" id="sem_4"></div>
+						<div class="text-2xl" id="sem_5"></div>
+						<div class="text-2xl" id="sem_6"></div>
+						<div class="text-2xl" id="sem_7"></div>
+						<div class="text-2xl" id="sem_8"></div>
+					</div>
 				</div>
 			</div>
 		</div>
