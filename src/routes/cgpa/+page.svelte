@@ -74,7 +74,7 @@
 	<div class="md:flex md:justify-left">
 		<div class="flex justify-center items-start px-5 md:px-10">
 			<div class="text-left">
-				<h1 class="py-50 md:text-6xl text-3xl flex flex-row ">CGPA Calculator<h1 class="ml-4 bg-blue-300 rounded-md">BETA</h1></h1>
+				<h1 class="py-50 md:text-6xl text-3xl flex flex-row ">CGPA Calculator<h1 class="ml-4 bg-blue-300 p-1 rounded-md">BETA</h1></h1>
 				<div class="flex mt-10 flex-col">
 					<div class="flex items-center space-x-3">
 						<input
