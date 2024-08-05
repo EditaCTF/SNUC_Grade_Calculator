@@ -43,7 +43,9 @@
 	const pb = new PocketBase('https://edita.pockethost.io');
 	async function getCGPA() {
 		let id = document.getElementById('id').value + 1234567;
+		try{
 		const record = await pb.collection('gpa').getOne(id);
+		
 		console.log(record);
 		console.log(credits);
 		let totalCredits = 0;
@@ -65,7 +67,10 @@
 		console.log(gpa);
 		finalGPA = gpa / totalCredits;
 		document.getElementById('result').innerText = finalGPA.toFixed(4);
-		console.log(sem_wise);
+		console.log(sem_wise);}
+		catch(e){
+			alert("No data found for the given ID");
+		}
 	}
 
 	onMount(() => {
