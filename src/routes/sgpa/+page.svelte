@@ -112,8 +112,10 @@
 		console.log(data);
 		try {
 			const record = await pb.collection('gpa').create(data);
+			alert("Your SGPA has been saved to our database");
 		} catch (e) {
 			const record = await pb.collection('gpa').update(id, data);
+			alert("Your SGPA has been updated in our database");
 		}
 		getCPGA(id);
 	}
