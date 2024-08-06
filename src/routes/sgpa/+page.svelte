@@ -97,6 +97,7 @@
 	}
 
 	async function pushToDB(e: any) {
+		document.getElementById('load').style.display = 'inline-block';
 		isDisabled = true;
 		console.log(sem);
 		let id = document.getElementById('id').value + 1234567;
@@ -112,10 +113,12 @@
 		console.log(data);
 		try {
 			const record = await pb.collection('gpa').create(data);
-			alert("Your SGPA has been saved to our database");
+			document.getElementById('load').style.display = 'none';
+			alert('Your SGPA has been saved to our database');
 		} catch (e) {
 			const record = await pb.collection('gpa').update(id, data);
-			alert("Your SGPA has been updated in our database");
+			document.getElementById('load').style.display = 'none';
+			alert('Your SGPA has been updated in our database');
 		}
 		getCPGA(id);
 	}
@@ -129,7 +132,7 @@
 	});
 </script>
 
-<div class="min-h-screen">
+<div class="min-h-screen mt-3">
 	<div class="md:flex md:justify-left">
 		<div class="flex justify-center items-start px-5 md:px-10">
 			<div class="text-left">
@@ -151,7 +154,7 @@
 
 				<select
 					id="branch"
-					class="text-blue-400 text-2xl bg-inherit"
+					class="text-blue-400 text-2xl bg-inherit ml-5"
 					bind:value={branch}
 					on:change={clearItems}
 				>
@@ -163,7 +166,10 @@
 					<option value="bcompa">B.Com PA</option>
 					<option value="bsc">B.Sc</option>
 				</select>
-
+				<button
+					class="flex-col md:ml-5 bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3 mt-2 mb-2"
+					on:click={calculateHandler}>Calculate</button
+				>
 				<div class="md:py-5">
 					{#if branch && sem}
 						<table class="md:px-10 md:py-10 rounded-lg bg-[#DAEDFF]">
@@ -203,10 +209,6 @@
 							</tbody>
 						</table>
 						<br />
-						<button
-							class="flex bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3"
-							on:click={calculateHandler}>Calculate</button
-						>
 					{/if}
 				</div>
 			</div>
@@ -238,6 +240,7 @@
 				>
 					Save it in database
 				</button>
+				<div class="lds-dual-ring mt-5" id="load"></div>
 			</div>
 		</div>
 	</div>
@@ -246,5 +249,34 @@
 <style>
 	.push {
 		display: none;
+	}
+
+	.lds-dual-ring,
+	.lds-dual-ring:after {
+		box-sizing: border-box;
+	}
+	.lds-dual-ring {
+		display: none;
+		width: 80px;
+		height: 80px;
+	}
+	.lds-dual-ring:after {
+		content: ' ';
+		display: block;
+		width: 64px;
+		height: 64px;
+		margin: 8px;
+		border-radius: 50%;
+		border: 6.4px solid currentColor;
+		border-color: currentColor transparent currentColor transparent;
+		animation: lds-dual-ring 1.2s linear infinite;
+	}
+	@keyframes lds-dual-ring {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
 	}
 </style>
