@@ -8,7 +8,7 @@
 		</p>
 		<p class="text-xl">when doom strikes back again next semester.</p>
 		<br />
-		<a href="/calculator">
+		<a href="/sgpa">
 			<div class="bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3">
 				Calculate your GPA
 			</div>
