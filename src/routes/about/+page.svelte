@@ -2,7 +2,7 @@
 </script>
 
 <div
-	class="flex flex-wrap justify-center items-center min-h-screen px-10 mt-2"
+	class="flex flex-wrap justify-center items-center min-h-screen px-10 py-20"
 	style="padding-bottom: 10%;"
 >
 	<div class="text-left w-full">

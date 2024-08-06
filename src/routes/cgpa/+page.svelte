@@ -42,6 +42,7 @@
 	import PocketBase from 'pocketbase';
 	const pb = new PocketBase('https://edita.pockethost.io');
 	async function getCGPA() {
+		document.getElementById('resdis').style.display = 'none';
 		document.getElementById('load').style.display = 'inline-block';
 		let id = document.getElementById('id').value + 1234567;
 		try {
@@ -73,6 +74,7 @@
 			console.log(sem_wise);
 		} catch (e) {
 			alert('No data found for the given ID');
+			document.getElementById('load').style.display = 'none';
 		}
 	}
 
@@ -81,7 +83,7 @@
 	});
 </script>
 
-<div class="min-h-screen mt-5">
+<div class="min-h-screen py-20">
 	<div class="md:flex md:justify-left">
 		<div class="flex justify-center items-start px-5 md:px-10">
 			<div class="text-left">
@@ -92,6 +94,10 @@
 				<div class="mt-5">
 					This CGPA Calculator is Work-in-Progress, and can only properly process 2023-24 batch
 					CGPAs. The CGPA calculator is NOT guaranteed to be accurate at the moment!
+				</div>
+				<div class="mt-5">
+					Make sure you have <a href="\sgpa" class="underline">calculated and stored SGPAs</a> to your
+					Digital ID beforehand before you calculate your CGPA here!
 				</div>
 				<div class="flex mt-10 flex-col">
 					<div class="flex items-center space-x-3">
@@ -105,7 +111,7 @@
 							class="flex bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3"
 							on:click={getCGPA}
 						>
-							Retrieve stored Grades
+							Calculate
 						</button>
 					</div>
 					<div class="lds-dual-ring mt-5" id="load"></div>

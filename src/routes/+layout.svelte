@@ -3,7 +3,7 @@
 	import Navbar from './Navbar.svelte';
 </script>
 
-<div class="pb-20">
+<div class="">
 	<Navbar />
 </div>
 

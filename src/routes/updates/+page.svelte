@@ -9,8 +9,8 @@
 			and calculate your CGPA with the CGPA Calculator!
 		</p>
 		<p class="mt-2">
-			Note that the CGPA Calculator is in Beta, and is only ready to calculate CGPA for the first 2
-			years. It is NOT guaranteed to display the CGPA accurately for now. For any queries/bug
+			Note that the CGPA Calculator is in Beta, and is only ready to calculate CGPA for the 2023-24
+			batch. It is NOT guaranteed to display the CGPA accurately for now. For any queries/bug
 			reports/improvements, visit our <a href="https://discord.gg/Qr3PsJfRF4" class="underline"
 				>Discord Server</a
 			> and ping us!

@@ -123,7 +123,7 @@
 		getCPGA(id);
 	}
 	function displayDiv() {
-		document.getElementById('res').innerText = 'Your predicted SGPA is';
+		document.getElementById('res').innerText = 'Your calculated SGPA is';
 		document.getElementById('result').innerText = finalGPA.toFixed(2);
 		document.getElementById('push').style.display = 'block';
 	}
@@ -132,7 +132,7 @@
 	});
 </script>
 
-<div class="min-h-screen mt-3">
+<div class="min-h-screen py-20">
 	<div class="md:flex md:justify-left">
 		<div class="flex justify-center items-start px-5 md:px-10">
 			<div class="text-left">
