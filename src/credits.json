@@ -14,5 +14,13 @@
         "bcom":18,
         "bcompa":17,
         "bsc":22
+    },
+    "3":{
+        "cyber":0,
+        "aids":22,
+        "iot":0,
+        "bcom":0,
+        "bcompa":0,
+        "bsc":0
     }
 }
