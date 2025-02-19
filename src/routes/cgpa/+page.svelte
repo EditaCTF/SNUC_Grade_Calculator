@@ -1,4 +1,21 @@
-<script lang="ts">
+
+<script>
+
+</script>
+
+<div class="min-h-screen py-20">
+	<div class="md:flex md:justify-left">
+		<div class="flex justify-center items-start px-5 md:px-10">
+			<div class="text-left">
+				<h1 class="py-50 md:text-6xl text-3xl flex flex-row">
+					CGPA Calculator
+				<h1 class="ml-4 bg-blue-300 p-1 rounded-md">BETA</h1>
+				</h1>
+				</div>	
+				</div>
+				</div>
+				</div>
+<!-- <script lang="ts">
 	import { onMount } from 'svelte';
 	import data from '../../data.json';
 	import credits from '../../credits.json';
@@ -170,4 +187,4 @@
 			transform: rotate(360deg);
 		}
 	}
-</style>
+</style> -->
