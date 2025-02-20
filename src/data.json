@@ -1427,22 +1427,27 @@
         {
           "course_code": "",
           "course_name": "Commercial Law",
-          "credits": 4
-        },
-        {
-          "course_code": "",
-          "course_name": "Business Mathematics",
           "credits": 5
         },
         {
           "course_code": "",
-          "course_name": "Microeconomics",
+          "course_name": "Mathematics for Business",
+          "credits": 5
+        },
+        {
+          "course_code": "",
+          "course_name": "Principles of Microeconomics",
           "credits": 3
         },
         {
           "course_code": "",
           "course_name": "Business Communication",
-          "credits": 4
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Spreadsheet Basics",
+          "credits": 2
         }
       ],
       "semester 2": [
