@@ -2,21 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	body {
+		@apply bg-white text-gray-900 transition-colors duration-300;
+	}
+
+	.dark body {
+		@apply bg-gray-900 text-white;
+	}
+}
+
 body {
 	position: relative;
 	width: 100%;
 	height: fit-content;
+	padding-top: 4.5rem;
 }
 
-body:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: #f7fbf9;
-	z-index: -1;
+@layer components {
+	.card {
+		@apply bg-white border border-gray-200 rounded-lg shadow-md p-4;
+		@apply dark:bg-gray-800 dark:border-gray-700;
+	}
+
+	.input {
+		@apply bg-white border border-gray-300 rounded-md px-3 py-2;
+		@apply dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+	}
+
+	.btn-primary {
+		@apply bg-blue-600 text-white hover:bg-blue-700;
+		@apply dark:bg-blue-700 dark:hover:bg-blue-800;
+	}
 }
 
 * {
@@ -30,4 +47,8 @@ html,
 body {
 	min-height: 100%;
 	height: auto;
+}
+
+.content-container {
+	@apply min-h-screen py-8 px-4 sm:px-6 lg:px-8;
 }
