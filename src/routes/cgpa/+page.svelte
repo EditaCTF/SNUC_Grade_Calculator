@@ -1,97 +1,100 @@
-
-<script>
-
-</script>
-
-<div class="min-h-screen py-20">
-	<div class="md:flex md:justify-left">
-		<div class="flex justify-center items-start px-5 md:px-10">
-			<div class="text-left">
-				<h1 class="py-50 md:text-6xl text-3xl flex flex-row">
-					CGPA Calculator
-				<h1 class="ml-4 bg-blue-300 p-1 rounded-md">BETA</h1>
-				</h1>
-				</div>	
-				</div>
-				</div>
-				</div>
-<!-- <script lang="ts">
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import data from '../../data.json';
 	import credits from '../../credits.json';
-	let branch: string;
-	let sem: number;
-	let grade: string[] = Array(10).fill('');
+	import PocketBase from 'pocketbase';
+	import { fade, fly, slide } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
+	import { darkMode } from '$lib/dark';
+
+	let branch: string = '';
+	let digitalId: string = '';
 	let finalGPA: number = 0;
 	let sem_wise = {};
-	function clearItems() {
-		for (let i = 0; i < 10; i++) {
-			grade[i] = '';
-		}
-	}
+	let isLoading: boolean = false;
+	let showResults: boolean = false;
+	let errorMessage: string = '';
 
-	function saveDataToLocalStorage() {
-		localStorage.setItem('grades', JSON.stringify(grade));
-		localStorage.setItem('sem', sem.toString());
-		localStorage.setItem('branch', branch);
-		localStorage.setItem('finalGPA', finalGPA.toFixed(2)); // Store final GPA
-	}
-
-	function retrieveDataFromLocalStorage() {
-		const storedGrades = localStorage.getItem('grades');
-		const storedSem = localStorage.getItem('sem');
-		const storedBranch = localStorage.getItem('branch');
-		const storedFinalGPA = localStorage.getItem('finalGPA');
-		if (storedGrades && storedSem && storedBranch) {
-			grade = JSON.parse(storedGrades);
-			sem = storedSem;
-			branch = storedBranch;
-		}
-		if (storedFinalGPA) {
-			finalGPA = parseFloat(storedFinalGPA);
-		}
-	}
-
-	function displayDiv() {
-		document.getElementById('res').innerText = 'Your predicted SGPA is';
-		document.getElementById('result').innerText = finalGPA.toFixed(2);
-	}
-	import PocketBase from 'pocketbase';
 	const pb = new PocketBase('https://edita.pockethost.io');
+
 	async function getCGPA() {
-		document.getElementById('resdis').style.display = 'none';
-		document.getElementById('load').style.display = 'inline-block';
-		let id = document.getElementById('id').value + 1234567;
+		if (!digitalId) {
+			errorMessage = 'Please enter your Digital ID';
+			return;
+		}
+
+		errorMessage = '';
+		isLoading = true;
+		showResults = false;
+
 		try {
+			const id = digitalId + 1234567;
+			if (id.length != 15) {
+				errorMessage = 'Please enter a valid Digital ID!';
+				isLoading = false;
+				return;
+			}
+
 			const record = await pb.collection('gpa').getOne(id);
 
-			console.log(record);
-			console.log(credits);
 			let totalCredits = 0;
 			let gpa = 0;
-			document.getElementById('load').style.display = 'none';
-			document.getElementById('resdis').style.display = 'block';
+			sem_wise = {};
+
 			for (let i = 1; i <= 8; i++) {
-				if (record[i] == undefined || record[i] == 0) {
-					continue;
-				} else if (credits[i] == undefined) {
+				sem_wise[i] = null;
+			}
+
+			for (let i = 1; i <= 8; i++) {
+				if (record[i] === undefined || record[i] === 0 || !credits[i] || !credits[i][record.Dept]) {
 					continue;
 				}
-				console.log(i, record[i], credits[i][record.Dept]);
-				document.getElementById('sem_' + i).innerText = `Semester ${i} GPA: ${record[i]}`;
+
 				sem_wise[i] = record[i];
 				totalCredits += credits[i][record.Dept];
 				gpa += record[i] * credits[i][record.Dept];
-				console.log(gpa);
 			}
-			console.log(totalCredits);
-			console.log(gpa);
+
+			if (totalCredits === 0) {
+				errorMessage = 'No valid semester data found. Please calculate your SGPA first.';
+				isLoading = false;
+				return;
+			}
+
 			finalGPA = gpa / totalCredits;
-			document.getElementById('result').innerText = finalGPA.toFixed(2);
-			console.log(sem_wise);
-		} catch (e) {
-			alert('No data found for the given ID');
-			document.getElementById('load').style.display = 'none';
+			branch = record.Dept;
+			showResults = true;
+
+			localStorage.setItem('cgpa_finalGPA', finalGPA.toFixed(2));
+			localStorage.setItem('cgpa_branch', branch);
+			localStorage.setItem('cgpa_digitalId', digitalId);
+			localStorage.setItem('cgpa_sem_wise', JSON.stringify(sem_wise));
+		} catch (error) {
+			console.error('Error fetching CGPA:', error);
+			errorMessage = 'No data found for the given ID. Make sure you have saved your SGPA first.';
+		} finally {
+			isLoading = false;
+		}
+	}
+
+	function clearData() {
+		digitalId = '';
+		showResults = false;
+		errorMessage = '';
+	}
+
+	function retrieveDataFromLocalStorage() {
+		const storedFinalGPA = localStorage.getItem('cgpa_finalGPA');
+		const storedBranch = localStorage.getItem('cgpa_branch');
+		const storedDigitalId = localStorage.getItem('cgpa_digitalId');
+		const storedSemWise = localStorage.getItem('cgpa_sem_wise');
+
+		if (storedFinalGPA && storedBranch && storedDigitalId && storedSemWise) {
+			finalGPA = parseFloat(storedFinalGPA);
+			branch = storedBranch;
+			digitalId = storedDigitalId;
+			sem_wise = JSON.parse(storedSemWise);
+			showResults = true;
 		}
 	}
 
@@ -100,91 +103,256 @@
 	});
 </script>
 
-<div class="min-h-screen py-20">
-	<div class="md:flex md:justify-left">
-		<div class="flex justify-center items-start px-5 md:px-10">
-			<div class="text-left">
-				<h1 class="py-50 md:text-6xl text-3xl flex flex-row">
+<div
+	class={`content-container ${$darkMode ? 'bg-gray-900' : 'bg-white'}`}
+	in:fly={{ y: -15, duration: 400, delay: 100, opacity: 0, easing: cubicOut }}
+>
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+		<div class="text-center mb-8">
+			<h1
+				class={`text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight ${
+					$darkMode ? 'text-white' : 'text-gray-900'
+				}`}
+				in:fly={{ y: -15, duration: 400, delay: 100, opacity: 0, easing: cubicOut }}
+			>
+				<span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600">
 					CGPA Calculator
-					<h1 class="ml-4 bg-blue-300 p-1 rounded-md">BETA</h1>
-				</h1>
-				<div class="mt-5">
-					This CGPA Calculator is Work-in-Progress, and can only properly process 2023-24 batch
-					CGPAs. The CGPA calculator is NOT guaranteed to be accurate at the moment!
-				</div>
-				<div class="mt-5">
-					Make sure you have <a href="\sgpa" class="underline">calculated and stored SGPAs</a> to your
-					Digital ID beforehand before you calculate your CGPA here!
-				</div>
-				<div class="flex mt-10 flex-col">
-					<div class="flex items-center space-x-3">
-						<input
-							type="text"
-							id="id"
-							class="rounded-lg w-fit rounded-2xl px-3 py-3"
-							placeholder="Digital ID"
-						/>
-						<button
-							class="flex bg-[#F4F4F4] shadow-md hover:bg-sky-100 w-fit rounded-2xl px-3 py-3"
-							on:click={getCGPA}
+				</span>
+			</h1>
+			<p
+				class={`mt-2 sm:mt-3 text-base sm:text-lg max-w-3xl mx-auto ${
+					$darkMode ? 'text-gray-300' : 'text-gray-600'
+				}`}
+				in:fly={{ y: -10, duration: 400, delay: 250, opacity: 0, easing: cubicOut }}
+			>
+				Check your cumulative grade point average based on your stored semester GPAs
+			</p>
+		</div>
+
+		<div
+			class="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8"
+			in:fly={{ y: -5, duration: 400, delay: 400, opacity: 0, easing: cubicOut }}
+		>
+			<div
+				class={`lg:col-span-3 rounded-2xl shadow-xl p-4 sm:p-6 border ${
+					$darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'
+				}`}
+				in:fly={{ y: -5, duration: 400, delay: 500, opacity: 0, easing: cubicOut }}
+			>
+				<div class="space-y-4 sm:space-y-6">
+					<p class={`text-sm sm:text-base ${$darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+						Before using this calculator, make sure you have calculated and saved your SGPAs using
+						the
+						<a href="/sgpa" class="text-indigo-600 hover:text-indigo-400">SGPA Calculator</a>.
+					</p>
+
+					<div class="mt-4 sm:mt-6">
+						<label
+							class={`block text-sm font-medium mb-1 ${
+								$darkMode ? 'text-gray-200' : 'text-gray-700'
+							}`}
 						>
-							Calculate
-						</button>
-					</div>
-					<div class="lds-dual-ring mt-5" id="load"></div>
-					<div class="resdis mt-5" id="resdis">
-						<div class="text-5xl mt-5">Your CGPA is</div>
-						<div class="mt-5 text-blue-500 text-7xl" id="result"></div>
-						<div class="mt-10">
-							Your Stored SGPAs:
-							<div class="text-2xl" id="sem_1"></div>
-							<div class="text-2xl" id="sem_2"></div>
-							<div class="text-2xl" id="sem_3"></div>
-							<div class="text-2xl" id="sem_4"></div>
-							<div class="text-2xl" id="sem_5"></div>
-							<div class="text-2xl" id="sem_6"></div>
-							<div class="text-2xl" id="sem_7"></div>
-							<div class="text-2xl" id="sem_8"></div>
+							Digital ID
+						</label>
+						<div class="flex flex-col sm:flex-row gap-3">
+							<input
+								type="text"
+								bind:value={digitalId}
+								class={`flex-1 p-2.5 sm:p-3 rounded-xl border transition-all ${
+									$darkMode
+										? 'bg-gray-700 border-gray-600 text-gray-200'
+										: 'bg-indigo-50 border-indigo-200 text-gray-800'
+								}`}
+								placeholder="Enter your Digital ID"
+							/>
+							<button
+								on:click={getCGPA}
+								class={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl font-medium text-white transition transform hover:-translate-y-0.5
+									bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700
+									focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-md`}
+								disabled={isLoading}
+							>
+								{#if isLoading}
+									<span class="flex items-center">
+										<svg
+											class="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+											xmlns="http://www.w3.org/2000/svg"
+											fill="none"
+											viewBox="0 0 24 24"
+										>
+											<circle
+												class="opacity-25"
+												cx="12"
+												cy="12"
+												r="10"
+												stroke="currentColor"
+												stroke-width="4"
+											></circle>
+											<path
+												class="opacity-75"
+												fill="currentColor"
+												d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+											></path>
+										</svg>
+										Loading...
+									</span>
+								{:else}
+									Calculate
+								{/if}
+							</button>
 						</div>
+
+						{#if errorMessage}
+							<p class="mt-2 text-red-500 text-sm" in:fade={{ duration: 200 }}>
+								{errorMessage}
+							</p>
+						{/if}
+					</div>
+
+					<div
+						class={`mt-4 sm:mt-6 p-3 sm:p-5 rounded-xl text-sm sm:text-base ${
+							$darkMode ? 'bg-gray-700' : 'bg-indigo-50'
+						}`}
+					>
+						<h3 class={`font-medium mb-2 ${$darkMode ? 'text-indigo-300' : 'text-indigo-800'}`}>
+							Important Notes:
+						</h3>
+						<ul
+							class={`list-disc list-inside space-y-1 ${
+								$darkMode ? 'text-gray-300' : 'text-gray-700'
+							}`}
+						>
+							<li>This calculator retrieves your semester GPAs from our database</li>
+							<li>Your CGPA is calculated based on the credit weightages of each semester</li>
+							<li>For accurate results, ensure all your semester GPAs are saved correctly</li>
+							<li>The calculator supports all batches and departments at SNU Chennai</li>
+						</ul>
 					</div>
 				</div>
 			</div>
+
+			<div
+				class="lg:col-span-2"
+				in:fly={{ y: -5, duration: 400, delay: 600, opacity: 0, easing: cubicOut }}
+			>
+				{#if showResults}
+					<div
+						class={`rounded-2xl shadow-xl p-4 sm:p-6 border ${
+							$darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'
+						}`}
+					>
+						<div class="text-center">
+							<h2
+								class={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${
+									$darkMode ? 'text-white' : 'text-gray-800'
+								}`}
+							>
+								Your CGPA Result
+							</h2>
+
+							<div class="flex justify-center items-center mb-4 sm:mb-6">
+								<div
+									class="bg-gradient-to-r from-indigo-500 to-purple-600 p-1 rounded-full h-32 w-32 sm:h-40 sm:w-40 flex items-center justify-center"
+								>
+									<div
+										class={`rounded-full h-28 w-28 sm:h-36 sm:w-36 flex items-center justify-center ${
+											$darkMode ? 'bg-gray-800' : 'bg-white'
+										}`}
+									>
+										<span
+											class="text-4xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-700"
+										>
+											{finalGPA.toFixed(2)}
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="mt-4 sm:mt-6">
+								<h3
+									class={`text-base sm:text-lg font-semibold mb-2 sm:mb-3 ${
+										$darkMode ? 'text-gray-200' : 'text-gray-700'
+									}`}
+								>
+									Semester Breakdown
+								</h3>
+								<div class="space-y-1 sm:space-y-2 text-sm sm:text-base">
+									{#each Object.entries(sem_wise) as [semNum, gpa], i}
+										{#if gpa !== null}
+											<div
+												class={`flex justify-between items-center py-1.5 sm:py-2 border-b ${
+													$darkMode ? 'border-gray-700' : 'border-indigo-100'
+												}`}
+											>
+												<span
+													class={`font-medium ${$darkMode ? 'text-gray-300' : 'text-gray-700'}`}
+												>
+													Semester {semNum}
+												</span>
+												<span class="text-indigo-600">
+													{gpa}
+												</span>
+											</div>
+										{/if}
+									{/each}
+								</div>
+							</div>
+						</div>
+					</div>
+				{:else}
+					<div
+						class={`rounded-2xl shadow-xl p-4 sm:p-6 border h-full flex flex-col items-center justify-center text-center ${
+							$darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'
+						}`}
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class={`h-16 w-16 sm:h-20 sm:w-20 mb-3 sm:mb-4 ${
+								$darkMode ? 'text-indigo-400' : 'text-indigo-200'
+							}`}
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+							/>
+						</svg>
+						<h3
+							class={`text-lg sm:text-xl font-semibold mb-1 sm:mb-2 ${
+								$darkMode ? 'text-gray-200' : 'text-gray-700'
+							}`}
+						>
+							Your results will appear here
+						</h3>
+						<p class={`text-sm sm:text-base ${$darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+							Enter your Digital ID and click Calculate to view your CGPA
+						</p>
+					</div>
+				{/if}
+			</div>
 		</div>
-		<br />
 	</div>
 </div>
 
 <style>
-	.resdis {
-		display: none;
-	}
+	@media (prefers-reduced-motion: no-preference) {
+		h1 span {
+			background-size: 300% 100%;
+			animation: gradient-shift 8s ease infinite;
+		}
 
-	.lds-dual-ring,
-	.lds-dual-ring:after {
-		box-sizing: border-box;
-	}
-	.lds-dual-ring {
-		display: none;
-		width: 80px;
-		height: 80px;
-	}
-	.lds-dual-ring:after {
-		content: ' ';
-		display: block;
-		width: 64px;
-		height: 64px;
-		margin: 8px;
-		border-radius: 50%;
-		border: 6.4px solid currentColor;
-		border-color: currentColor transparent currentColor transparent;
-		animation: lds-dual-ring 1.2s linear infinite;
-	}
-	@keyframes lds-dual-ring {
-		0% {
-			transform: rotate(0deg);
-		}
-		100% {
-			transform: rotate(360deg);
+		@keyframes gradient-shift {
+			0%,
+			100% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
 		}
 	}
-</style> -->
+</style>
