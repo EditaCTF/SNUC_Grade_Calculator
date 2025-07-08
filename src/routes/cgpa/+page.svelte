@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import data from '../../data.json';
-	import credits from '../../credits.json';
+	// import credits from '../../credits.json'; // REMOVE THIS LINE
 	import PocketBase from 'pocketbase';
 	import { fade, fly, slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
@@ -10,12 +10,33 @@
 	let branch: string = '';
 	let digitalId: string = '';
 	let finalGPA: number = 0;
-	let sem_wise = {};
+	let sem_wise: Record<number, number | null> = {};
 	let isLoading: boolean = false;
 	let showResults: boolean = false;
 	let errorMessage: string = '';
 
 	const pb = new PocketBase('https://edita.pockethost.io');
+
+	function normalizeBranchName(dept: string): string {
+		if (!dept) return dept;
+		const map: Record<string, string> = {
+			bsc: "b.sc",
+			bcom: "b.com (hons)",
+			bcompa: "b.com pa",
+			cyber: "cyber",
+			aids: "aids",
+			iot: "iot"
+			// Add more as needed
+		};
+		const key = dept.toLowerCase().replace(/[^a-z]/g, "");
+		return map[key] || dept;
+	}
+
+	function normalizeBatchKey(batch: string): string {
+		// Map '2023-27' -> '2023', '2024-28' -> '2024', etc.
+		if (!batch) return batch;
+		return batch.split('-')[0];
+	}
 
 	async function getCGPA() {
 		if (!digitalId) {
@@ -45,14 +66,24 @@
 				sem_wise[i] = null;
 			}
 
+			// Determine batch: prefer record.batch, else infer from id
+			let batch = record.batch || getBatchFromRoll(record.id);
+			batch = normalizeBatchKey(batch);
+			const branchKey = normalizeBranchName(record.Dept);
+
 			for (let i = 1; i <= 8; i++) {
-				if (record[i] === undefined || record[i] === 0 || !credits[i] || !credits[i][record.Dept]) {
+				if (record[i] === undefined || record[i] === 0) {
 					continue;
 				}
 
+				console.log('DEBUG:', { batch, branchKey, semester: i });
+				const semesterCredits = getSemesterCredits(batch, branchKey, i);
+				console.log('Semester Credits:', semesterCredits);
+				if (semesterCredits === 0) continue;
+
 				sem_wise[i] = record[i];
-				totalCredits += credits[i][record.Dept];
-				gpa += record[i] * credits[i][record.Dept];
+				totalCredits += semesterCredits;
+				gpa += record[i] * semesterCredits;
 			}
 
 			if (totalCredits === 0) {
@@ -64,6 +95,15 @@
 			finalGPA = gpa / totalCredits;
 			branch = record.Dept;
 			showResults = true;
+
+			// Save CGPA to PocketBase
+			try {
+				finalGPA = parseFloat(finalGPA.toFixed(2));
+				await pb.collection('gpa').update(record.id, { CGPA: finalGPA });
+				console.log('CGPA saved to PocketBase:', finalGPA);
+			} catch (err) {
+				console.error('Failed to save CGPA to PocketBase:', err);
+			}
 
 			localStorage.setItem('cgpa_finalGPA', finalGPA.toFixed(2));
 			localStorage.setItem('cgpa_branch', branch);
@@ -95,6 +135,42 @@
 			digitalId = storedDigitalId;
 			sem_wise = JSON.parse(storedSemWise);
 			showResults = true;
+		}
+	}
+
+	function getBatchFromRoll(roll: string): string {
+		if (roll.startsWith('23')) return '2023';
+		if (roll.startsWith('24')) return '2024';
+		// Add more as needed
+		return 'Unknown';
+	}
+
+	function getSemesterCredits(batch: string, branch: string, semester: number): number {
+		const batchData = (data as Record<string, any>)[batch];
+		if (!batchData) return 0;
+		const branchData = batchData[branch];
+		if (!branchData) return 0;
+		const semKey = `semester ${semester}`;
+		const semCourses = branchData[semKey];
+		if (!semCourses) return 0;
+		return semCourses.reduce((sum: number, course: { credits?: number }) => sum + (course.credits || 0), 0);
+	}
+
+	async function getBatch(roll: string) {
+		if (!roll) return 'Unknown';
+		if (roll.startsWith('23')) return '2023-27';
+		if (roll.startsWith('24')) return '2024-28';
+		// Add more rules as needed
+		return 'Unknown';
+	}
+
+	async function backfill() {
+		const records = await pb.collection('grades').getFullList({ batch: 200 }); // adjust collection name and batch size as needed
+
+		for (const record of records) {
+			const batch = await getBatch(record.roll_number || record.roll);
+			await pb.collection('grades').update(record.id, { batch });
+			console.log(`Updated ${record.id} with batch ${batch}`);
 		}
 	}
 
