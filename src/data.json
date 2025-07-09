@@ -1454,7 +1454,7 @@
         {
           "course_code": "",
           "course_name": "Financial Accounting - II",
-          "credits": 4
+          "credits": 5
         },
         {
           "course_code": "",
@@ -1463,7 +1463,7 @@
         },
         {
           "course_code": "",
-          "course_name": "Computer Applications in Business",
+          "course_name": "Spreadsheet Intermediate (Lab)",
           "credits": 4
         },
         {
@@ -1475,6 +1475,11 @@
           "course_code": "",
           "course_name": "Fundamentals of Macroeconomics",
           "credits": 3
+        },
+        {
+          "course_code":"",
+          "course_name":"Fundamentals of Cost Accounting",
+          "credits":4
         }
       ],
       "semester 3": [
