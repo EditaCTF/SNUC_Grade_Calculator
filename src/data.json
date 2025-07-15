@@ -768,6 +768,48 @@
           "course_name": "DSE 1",
           "credits": 4
         }
+      ],
+      "semester 5": [
+        {
+          "course_code": "",
+          "course_name": "Principles of Corporate Finance",
+          "credits": 5
+        },
+        {
+          "course_code": "",
+          "course_name": "Direct Taxes: Law and Practice",
+          "credits": 5
+        },
+        {
+          "course_code": "",
+          "course_name": "Database Management Systems using SQL",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Company Law",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Fundamanetals of Management Account",
+          "credits": 4
+        },
+        {
+          "course_code": "",
+          "course_name": "Spreadsheets Advanced (Lab)",
+          "credits": 2
+        },
+        {
+          "course_code": "",
+          "course_name": "Elective 1: Business Research / Management Principles and Practice",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Honours Subject: Economics of Money, Banking and Financial Markets",
+          "credits": 3
+        }
       ]
     },
     "b.sc": {
