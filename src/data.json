@@ -1,4 +1,50 @@
 {
+  "2022": {
+    "aids": {
+      "semester 6": [
+        {
+          "course_code": "",
+          "course_name": "Image and Video Processing",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Natural Language Processing",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Signal Speech Processing",
+          "credits": 1
+        },
+        {
+          "course_code": "",
+          "course_name": "Social network anal",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Cyber PE",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Calculus",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Image and Video Processing Lab",
+          "credits": 2
+        },
+        {
+          "course_code": "",
+          "course_name": "Natural Language Processing Lab",
+          "credits": 2
+        }
+      ]
+    }
+  },
   "2023": {
     "cyber": {
       "semester 1": [
