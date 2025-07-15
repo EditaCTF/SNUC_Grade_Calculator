@@ -87,6 +87,11 @@
           "course_code": "",
           "course_name": "Engineering Physics Lab",
           "credits": 2
+        },
+        {
+          "course_code": "",
+          "course_name": "Extra Academic Activity",
+          "credits": 1
         }
       ],
       "semester 2": [
@@ -129,6 +134,11 @@
           "course_code": "",
           "course_name": "Programming in Python Lab ",
           "credits": 2
+        },
+        {
+          "course_code": "",
+          "course_name": "Extra Academic Activity",
+          "credits": 1
         }
       ],
       "semester 3": [
@@ -213,11 +223,6 @@
           "course_code": "",
           "course_name": "Machine Learning Lab",
           "credits": 2
-        },
-        {
-          "course_code": "",
-          "course_name": "Extra Academic Activity",
-          "credits": 1
         }
       ]
     },
