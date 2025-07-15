@@ -217,7 +217,7 @@
 									$darkMode ? 'text-gray-200' : 'text-gray-700'
 								}`}
 							>
-								Academic Year
+								Batch
 							</label>
 							<select
 								id="year"
@@ -234,7 +234,7 @@
 									<option value={yearOption}
 										>{yearOption.replace(
 											/^(\d{4})$/,
-											'$1-' + (parseInt(yearOption.substring(2)) + 1)
+											'$1-' + (parseInt(yearOption.substring(2)) + 4)
 										)}</option
 									>
 								{/each}
