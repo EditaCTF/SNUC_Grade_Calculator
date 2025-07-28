@@ -6,6 +6,8 @@
 	import { fade, fly, slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { darkMode } from '$lib/dark';
+	import { browser } from '$app/environment';
+	import posthog from 'posthog-js';
 
 	let branch: string = '';
 	let digitalId: string = '';
@@ -96,7 +98,17 @@
 			branch = record.Dept;
 			showResults = true;
 
-			// Save CGPA to PocketBase
+			if (browser) {
+				posthog.capture('cgpa_calculated', {
+					branch: record.Dept,
+					batch: batch,
+					cgpa_result: parseFloat(finalGPA.toFixed(2)),
+					total_credits: totalCredits,
+					semesters_completed: Object.keys(sem_wise).filter(key => sem_wise[parseInt(key)] !== null).length,
+					digital_id_length: digitalId.length
+				});
+			}
+
 			try {
 				finalGPA = parseFloat(finalGPA.toFixed(2));
 				await pb.collection('gpa').update(record.id, { CGPA: finalGPA });
@@ -112,6 +124,13 @@
 		} catch (error) {
 			console.error('Error fetching CGPA:', error);
 			errorMessage = 'No data found for the given ID. Make sure you have saved your SGPA first.';
+			
+			if (browser) {
+				posthog.capture('cgpa_calculation_error', {
+					digital_id_length: digitalId.length,
+					error_message: error.message || 'Unknown error'
+				});
+			}
 		} finally {
 			isLoading = false;
 		}
@@ -224,6 +243,7 @@
 
 					<div class="mt-4 sm:mt-6">
 						<label
+							for="digital-id-input"
 							class={`block text-sm font-medium mb-1 ${
 								$darkMode ? 'text-gray-200' : 'text-gray-700'
 							}`}
@@ -232,6 +252,7 @@
 						</label>
 						<div class="flex flex-col sm:flex-row gap-3">
 							<input
+								id="digital-id-input"
 								type="text"
 								bind:value={digitalId}
 								class={`flex-1 p-2.5 sm:p-3 rounded-xl border transition-all ${
