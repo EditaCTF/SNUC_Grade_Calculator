@@ -4,6 +4,8 @@
 	import { fly, fade } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { darkMode } from '$lib/dark';
+	import { browser } from '$app/environment';
+	import posthog from 'posthog-js';
 
 	let currentRoute = '';
 	let isMenuOpen = false;
@@ -24,10 +26,31 @@
 
 	function updateRoute(route: string) {
 		currentRoute = route;
+		if (browser) {
+			posthog.capture('navigation_click', {
+				route: route,
+				from_route: currentRoute,
+				navigation_type: 'navbar'
+			});
+		}
 	}
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
+		if (browser) {
+			posthog.capture('mobile_menu_toggle', {
+				menu_state: isMenuOpen ? 'opened' : 'closed'
+			});
+		}
+	}
+
+	function handleDarkModeToggle() {
+		darkMode.toggle();
+		if (browser) {
+			posthog.capture('dark_mode_toggle', {
+				new_mode: !$darkMode ? 'dark' : 'light'
+			});
+		}
 	}
 </script>
 
@@ -93,7 +116,7 @@
 					About
 				</a>
 				<button
-					on:click={darkMode.toggle}
+					on:click={handleDarkModeToggle}
 					class="p-2 rounded-full transition-all duration-300 text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
 					aria-label="Toggle dark mode"
 				>
@@ -137,7 +160,7 @@
 
 			<div class="flex items-center md:hidden">
 				<button
-					on:click={darkMode.toggle}
+					on:click={handleDarkModeToggle}
 					class="mr-2 p-2 rounded-full transition-all duration-300 text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
 					aria-label="Toggle dark mode"
 				>
@@ -284,11 +307,13 @@
 		</div>
 	</div>
 
-	<div
-		class="fixed inset-0 bg-black/20 dark:bg-black/50 z-30"
+	<button
+		class="fixed inset-0 bg-black/20 dark:bg-black/50 z-30 border-0 p-0 cursor-default"
 		on:click={() => (isMenuOpen = false)}
+		on:keydown={(e) => e.key === 'Escape' && (isMenuOpen = false)}
 		transition:fade={{ duration: 200 }}
-	></div>
+		aria-label="Close menu"
+	></button>
 {/if}
 
 <style>
