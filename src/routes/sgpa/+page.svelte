@@ -5,6 +5,8 @@
 	import { fade, fly, slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { darkMode } from '$lib/dark';
+	import { browser } from '$app/environment';
+	import posthog from 'posthog-js';
 
 	let year: string = '';
 	let branch: string = '';
@@ -50,6 +52,17 @@
 		finalGPA = totalCredits !== 0 ? weightedSum / totalCredits : 0;
 		localStorage.setItem('result', finalGPA.toFixed(2));
 		saveDataToLocalStorage();
+
+		if (browser) {
+			posthog.capture('sgpa_calculated', {
+				year: year,
+				branch: branch,
+				semester: sem,
+				gpa_result: parseFloat(finalGPA.toFixed(2)),
+				total_credits: totalCredits,
+				courses_count: courses.length
+			});
+		}
 
 		setTimeout(() => {
 			showResults = true;
@@ -156,10 +169,31 @@
 			}
 
 			saveSuccess = true;
+			
+			if (browser) {
+				posthog.capture('sgpa_saved_to_database', {
+					year: year,
+					branch: branch,
+					semester: sem,
+					gpa_result: parseFloat(finalGPA.toFixed(2)),
+					digital_id_length: digitalId.length
+				});
+			}
+			
 			await getCPGA(id);
 		} catch (error) {
 			saveMessage = 'Error saving data. Please try again.';
 			saveSuccess = false;
+			
+			
+			if (browser) {
+				posthog.capture('sgpa_save_error', {
+					year: year,
+					branch: branch,
+					semester: sem,
+					error_message: error.message || 'Unknown error'
+				});
+			}
 		} finally {
 			isLoading = false;
 		}

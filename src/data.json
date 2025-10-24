@@ -214,6 +214,48 @@
           "course_name": "Machine Learning Lab",
           "credits": 2
         }
+      ],
+      "semester 5": [
+        {
+          "course_code":"",
+          "course_name": "Optimization Techniques",
+          "credits": 3
+        },
+        {
+          "course_code":"",
+          "course_name": "High Performance Computing",
+          "credits": 3
+        },
+        {
+          "course_code":"",
+          "course_name":"Artificial Intelligence",
+          "credits": 3
+        },
+        {
+          "course_code":"",
+          "course_name":"EHPT",
+          "credits":3
+        },
+        {
+          "course_code":"",
+          "course_name":"Principles of Management",
+          "credits":2
+        },
+        {
+          "course_code":"",
+          "course_name":"DevOps"
+          "credits":3
+        },
+        {
+          "course_code":"",
+          "course_name":"EHPT Lab",
+          "credits":2
+        },
+        {
+          "course_code":"",
+          "course_name":"HPC Lab",
+          "credits":2
+        }
       ]
     },
     "aids": {
