@@ -217,44 +217,44 @@
       ],
       "semester 5": [
         {
-          "course_code":"",
+          "course_code": "",
           "course_name": "Optimization Techniques",
           "credits": 3
         },
         {
-          "course_code":"",
+          "course_code": "",
           "course_name": "High Performance Computing",
           "credits": 3
         },
         {
-          "course_code":"",
-          "course_name":"Artificial Intelligence",
+          "course_code": "",
+          "course_name": "Artificial Intelligence",
           "credits": 3
         },
         {
-          "course_code":"",
-          "course_name":"EHPT",
-          "credits":3
+          "course_code": "",
+          "course_name": "EHPT",
+          "credits": 3
         },
         {
-          "course_code":"",
-          "course_name":"Principles of Management",
-          "credits":2
+          "course_code": "",
+          "course_name": "Principles of Management",
+          "credits": 2
         },
         {
-          "course_code":"",
-          "course_name":"DevOps",
-          "credits":3
+          "course_code": "",
+          "course_name": "DevOps",
+          "credits": 3
         },
         {
-          "course_code":"",
-          "course_name":"EHPT Lab",
-          "credits":2
+          "course_code": "",
+          "course_name": "EHPT Lab",
+          "credits": 2
         },
         {
-          "course_code":"",
-          "course_name":"HPC Lab",
-          "credits":2
+          "course_code": "",
+          "course_name": "HPC Lab",
+          "credits": 2
         }
       ]
     },
@@ -429,6 +429,53 @@
         {
           "course_code": "",
           "course_name": "Extra Academic Activity",
+          "credits": 2
+        }
+      ],
+      "semester 5": [
+        {
+          "course_code": "",
+          "course_name": "Optimization Techniques",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Web Technologies",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Computer Networks + Lab",
+          "credits": 4
+        },
+        {
+          "course_code": "",
+          "course_name": "Deep Learning",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Principles of Management",
+          "credits": 2
+        },
+        {
+          "course_code": "",
+          "course_name": "Introduction to robotics",
+          "credits": 3
+        },
+        {
+          "course_code": "",
+          "course_name": "Introduction to Digital Signal Processing",
+          "credits": 1
+        },
+        {
+          "course_code": "",
+          "course_name": "Deep Learning Lab",
+          "credits": 2
+        },
+        {
+          "course_code": "",
+          "course_name": "Web Technologies Lab",
           "credits": 2
         }
       ]
@@ -1617,9 +1664,9 @@
           "credits": 3
         },
         {
-          "course_code":"",
-          "course_name":"Fundamentals of Cost Accounting",
-          "credits":4
+          "course_code": "",
+          "course_name": "Fundamentals of Cost Accounting",
+          "credits": 4
         }
       ],
       "semester 3": [
