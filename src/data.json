@@ -1692,18 +1692,18 @@
         },
         {
           "course_code": "",
-          "course_name": "Fundamentals of Cost Accounting",
-          "credits": 4
+          "course_name": "Fundamentals of Management Accounting",
+          "credits": 3
         },
         {
           "course_code": "",
-          "course_name": "Spreadsheet Intermediate (Lab)",
+          "course_name": "Spreadsheet Advanced (Lab)",
           "credits": 2
         },
         {
           "course_code": "",
           "course_name": "Computerized Accounts with Tally (Lab)",
-          "credits": 4
+          "credits": 2
         }
       ],
       "semester 4": [
