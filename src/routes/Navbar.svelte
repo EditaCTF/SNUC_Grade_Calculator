@@ -90,6 +90,19 @@
 					CGPA
 				</a>
 				<a
+					href="/whatif"
+					on:click={() => updateRoute('whatif')}
+					class={`font-medium transition-colors hover:text-amber-600 text-base ${
+						currentRoute === 'whatif'
+							? 'text-amber-600'
+							: $darkMode
+								? 'text-white'
+								: 'text-gray-900'
+					}`}
+				>
+					What-If
+				</a>
+				<a
 					href="/updates"
 					on:click={() => updateRoute('updates')}
 					class={`font-medium transition-colors hover:text-green-600 text-base ${
@@ -275,6 +288,20 @@
 				}`}
 			>
 				CGPA Calculator
+			</a>
+			<a
+				href="/whatif"
+				on:click={() => {
+					updateRoute('whatif');
+					isMenuOpen = false;
+				}}
+				class={`px-4 py-3 rounded-xl font-medium transition-colors hover:bg-amber-50 dark:hover:bg-amber-900/20 ${
+					currentRoute === 'whatif'
+						? 'text-amber-600 bg-amber-50 dark:bg-amber-900/20'
+						: 'text-gray-700 dark:text-gray-200'
+				}`}
+			>
+				What-If Calculator
 			</a>
 			<a
 				href="/updates"
