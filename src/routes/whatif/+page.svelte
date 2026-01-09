@@ -225,11 +225,13 @@
 
 		if (requiredVal > 10) {
 			achievable = false;
-			message = "Not mathematically possible (Req SGPA > 10)";
+			const maxPoints = currentPoints + 10 * upcomingCredits;
+			const maxCGPA = maxPoints / totalCredits;
+			message = `Not possible. Max CGPA achievable is ${maxCGPA.toFixed(2)} (with 10 SGPA)`;
 		} else if (requiredVal <= 0) {
-			message = "Already achieved! Even 0 SGPA works.";
+			message = 'Already achieved! Even 0 SGPA works.';
 		} else if (requiredVal > 9.5) {
-			message = "Extremely Challenging (Need near perfect score)";
+			message = 'Extremely Challenging (Need near perfect score)';
 		}
 
 		requiredSGPA = {
@@ -858,7 +860,7 @@
 								<div class="text-center p-6 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-700 dark:to-gray-600">
 									<p class={`text-sm mb-1 ${$darkMode ? 'text-gray-300' : 'text-gray-600'}`}>You need an SGPA of</p>
 									<p class={`text-4xl font-extrabold my-2 ${requiredSGPA.achievable ? 'text-amber-600 dark:text-amber-400' : 'text-red-600 dark:text-red-400'}`}>
-										{requiredSGPA.val.toFixed(2)}
+										{requiredSGPA.val > 10 ? '> 10.00' : requiredSGPA.val.toFixed(2)}
 									</p>
 									<p class={`text-sm font-medium ${$darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
 										in the upcoming semester
