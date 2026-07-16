@@ -1304,6 +1304,48 @@
           "course_name": "Machine Learning Lab",
           "credits": 2
         }
+      ],
+      "semester 5": [
+        {
+          "course_code": "CS2007",
+          "course_name": "Artificial Intelligence",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3013",
+          "course_name": "Network Penetration Testing, Ethical Hacking and Social Engineering",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3015",
+          "course_name": "High Performance Computing and Big Data for Cybersecurity",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3685",
+          "course_name": "DevOps",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3809",
+          "course_name": "Penetration Testing and Ethical Hacking Lab",
+          "credits": 2
+        },
+        {
+          "course_code": "CS3811",
+          "course_name": "HPC and Big Data for Cybersecurity Lab",
+          "credits": 2
+        },
+        {
+          "course_code": "MA3001",
+          "course_name": "Optimization Techniques",
+          "credits": 3
+        },
+        {
+          "course_code": "BM3003",
+          "course_name": "Principles of Management",
+          "credits": 2
+        }
       ]
     },
     "aids": {
@@ -1472,6 +1514,53 @@
         {
           "course_code": "",
           "course_name": "Machine Learning Lab",
+          "credits": 2
+        }
+      ],
+      "semester 5": [
+        {
+          "course_code": "CS3005",
+          "course_name": "Web Technologies",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3007",
+          "course_name": "Deep Learning",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3009",
+          "course_name": "Introduction to Digital Signal Processing",
+          "credits": 1
+        },
+        {
+          "course_code": "CS3011",
+          "course_name": "Introduction to Robotics",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3701",
+          "course_name": "Computer Networks + Lab",
+          "credits": 4
+        },
+        {
+          "course_code": "CS3801",
+          "course_name": "Web Technologies Lab",
+          "credits": 2
+        },
+        {
+          "course_code": "CS3807",
+          "course_name": "Deep Learning Lab",
+          "credits": 2
+        },
+        {
+          "course_code": "MA3001",
+          "course_name": "Optimization Techniques",
+          "credits": 3
+        },
+        {
+          "course_code": "BM3003",
+          "course_name": "Principles of Management",
           "credits": 2
         }
       ]
@@ -1643,6 +1732,53 @@
           "course_code": "",
           "course_name": "Design Thinking",
           "credits": 1
+        }
+      ],
+      "semester 5": [
+        {
+          "course_code": "CS2007",
+          "course_name": "Artificial Intelligence",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3001",
+          "course_name": "Distributed Computing",
+          "credits": 2
+        },
+        {
+          "course_code": "CS3003",
+          "course_name": "Software and Programming in IoT",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3005",
+          "course_name": "Web Technologies",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3699T",
+          "course_name": "Introduction to Cybersecurity",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3801",
+          "course_name": "Web Technologies Lab",
+          "credits": 2
+        },
+        {
+          "course_code": "CS3803",
+          "course_name": "Software and Programming in IoT Lab",
+          "credits": 1
+        },
+        {
+          "course_code": "MA1501",
+          "course_name": "Calculus and Numerical Methods",
+          "credits": 3
+        },
+        {
+          "course_code": "CS3805",
+          "course_name": "Artificial Intelligence Lab",
+          "credits": 2
         }
       ]
     },
